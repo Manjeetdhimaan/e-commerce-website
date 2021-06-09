@@ -269,7 +269,7 @@ img {
 }
 ul {
     list-style: none;
-    padding: 0;
+    // padding: 0;
 }
 h1,
 h2,
@@ -364,19 +364,19 @@ img.molla-lz[data-oi*=".png"] {
     list-style: none;
     margin-bottom: 0;
 }
-.menu a {
-    text-transform: uppercase;
-    font-weight: 600;
-    padding: 10px 0;
-    margin: 0 5px;
-    display: block;
-    color: #999;
-    transition: border-bottom-color 0.25s;
-}
+// .menu a {
+//     text-transform: uppercase;
+//     font-weight: 600;
+//     padding: 10px 0;
+//     margin: 0 5px;
+//     display: block;
+//     color: #999;
+//     transition: border-bottom-color 0.25s;
+// }
 .menu a:hover,
 .menu li.active > a {
     border-bottom-color: #cd9967;
-    color: #cd9967;
+    // color: #cd9967;
     text-decoration: none;
 }
 #header .logo {
@@ -517,9 +517,9 @@ img.molla-lz[data-oi*=".png"] {
     display: block;
     margin-bottom: 3rem;
 }
-.menu a {
-    display: inline-block;
-}
+// .menu a {
+//     display: inline-block;
+// }
 .demos h5 {
     text-transform: uppercase;
     font-weight: 400;
@@ -611,4 +611,8 @@ img.molla-lz[data-oi*=".png"] {
 }
 ::ng-deep .page-transform .header {
     transform: translateX(200px);
+  }
+
+  .display{
+      display: block;
   }

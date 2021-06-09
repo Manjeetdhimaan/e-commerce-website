@@ -11,8 +11,7 @@ export class HeaderComponent implements OnInit  {
   @ViewChild('searchInput') searchInput?:ElementRef;
   toggleMobileMenu = false;
   searchToggle=false;
-  focus=true;
-  
+  hover=false
   @Output() mobileMenuClose = new EventEmitter();
   constructor() { }
 
@@ -32,6 +31,9 @@ mobileMenuToggle(){
       focus.focus();
     },0);
 
+}
+hoverToggle(){
+this.hover= !this.hover;
 }
 }
 

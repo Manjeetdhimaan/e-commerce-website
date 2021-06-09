@@ -13,8 +13,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BannerComponent } from './core/home/banner/banner.component';
 import { NewArrivalsComponent } from './core/home/new-arrivals/new-arrivals.component';
 import { PopularCategoriesComponent } from './core/home/popular-categories/popular-categories.component';
-import { AccordionModule } from './accordion/accordion.module';
 import { AccordiondemoComponent } from './core/header/accordiondemo/accordiondemo.component';
+import { AccordionModule } from './shared/UI-components/accordion/accordion.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +34,7 @@ import { AccordiondemoComponent } from './core/header/accordiondemo/accordiondem
     BrowserAnimationsModule,
     NgbModule,
     AccordionModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
