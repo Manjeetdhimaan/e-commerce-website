@@ -10,6 +10,5 @@ export class AppComponent {
   toggleMobileMenu = false;
   mobileMenuToggle(){
     this.toggleMobileMenu =  !this.toggleMobileMenu 
-    console.log( "somethine"+ this.toggleMobileMenu)
   }
 }

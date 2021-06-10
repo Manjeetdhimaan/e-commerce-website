@@ -6,34 +6,33 @@ import { Subject } from 'rxjs';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit  {
-  @ViewChild('menu') menuFocus?:ElementRef;
-  @ViewChild('searchInput') searchInput?:ElementRef;
+export class HeaderComponent implements OnInit {
+  @ViewChild('menu') menuFocus?: ElementRef;
+  @ViewChild('searchInput') searchInput?: ElementRef;
   toggleMobileMenu = false;
-  searchToggle=false;
-  hover=false
+  searchToggle = false;
+  hover = false
   @Output() mobileMenuClose = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
-  } 
+  }
 
-mobileMenuToggle(){
-  this.toggleMobileMenu =  !this.toggleMobileMenu 
-  console.log( "somethine"+ this.toggleMobileMenu);
-  this.mobileMenuClose.emit(null);
-}
+  mobileMenuToggle() {
+    this.toggleMobileMenu = !this.toggleMobileMenu
+    this.mobileMenuClose.emit(null);
+  }
 
-  toggleSearch(){
+  toggleSearch() {
     this.searchToggle = !this.searchToggle
-    var focus =  this.searchInput?.nativeElement
-    setTimeout(()=>{// this will make the execution after the above boolean has changed;
+    var focus = this.searchInput?.nativeElement
+    setTimeout(() => {// this will make the execution after the above boolean has changed;
       focus.focus();
-    },0);
+    }, 0);
 
-}
-hoverToggle(){
-this.hover= !this.hover;
-}
+  }
+  hoverToggle() {
+    this.hover = !this.hover;
+  }
 }
 

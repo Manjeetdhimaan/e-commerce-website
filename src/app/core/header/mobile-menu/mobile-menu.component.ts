@@ -20,6 +20,5 @@ export class MobileMenuComponent implements OnInit {
   toggle(){
     this.mobileMenuClose.emit(null);
   }
-
   
 }

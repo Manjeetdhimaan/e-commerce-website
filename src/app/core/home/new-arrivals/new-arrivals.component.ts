@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-arrivals.component.scss']
 })
 export class NewArrivalsComponent implements OnInit {
-
+swipe=false;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  swiperight(){
+   this.swipe = !this.swipe;
+  }
 }
