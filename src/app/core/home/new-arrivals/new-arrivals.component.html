@@ -1,288 +1,232 @@
-<div class="bg-lighter pt-5 pb-5 mb-5">
+<div class="checkout">
     <div class="container">
-        <div class="heading text-center mb-4">
-            <h2 class="title">Recent Arrivals</h2>
-            <!-- End .title -->
-            <p class="title-desc">Aliquam tincidunt mauris eurisus</p>
-            <!-- End .title-desc -->
-        </div><!-- End .heading -->
-
-        <div class="owl-carousel owl-simple owl-loaded owl-drag" data-toggle="owl" data-owl-options="{
-                &quot;nav&quot;: false, 
-                &quot;dots&quot;: true,
-                &quot;margin&quot;: 20,
-                &quot;loop&quot;: false,
-                &quot;responsive&quot;: {
-                    &quot;0&quot;: {
-                        &quot;items&quot;:2
-                    },
-                    &quot;480&quot;: {
-                        &quot;items&quot;:2
-                    },
-                    &quot;768&quot;: {
-                        &quot;items&quot;:3
-                    },
-                    &quot;992&quot;: {
-                        &quot;items&quot;:4
-                    },
-                    &quot;1200&quot;: {
-                        &quot;items&quot;:4,
-                        &quot;nav&quot;: true
-                    }
-                }
-            }">
-            <!-- End .product -->
-
-            <!-- End .product -->
-
-            <!-- End .product -->
-
-            <!-- End .product -->
-
-            <!-- End .product -->
-
-            <!-- End .product -->
-            <div class="owl-stage-outer">
-                <div class="owl-stage"
-                    style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1782px;">
-                     <div class="owl-item active" style="width: 277px; margin-right: 20px;">      
-                        <div class="product product-4">
-                            <figure class="product-media">
-                                <a href="product.html">
-                                    <img src="assets/images/demos/demo-12/products/product-1.jpg" alt="Product image"
-                                        class="product-image">
-                                    <img src="assets/images/demos/demo-12/products/product-1-2.jpg" alt="Product image"
-                                        class="product-image-hover">
-                                </a>
-
-                                <div class="product-action-vertical">
-                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to
-                                            wishlist</span></a>
-                                    <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
-                                        title="Quick view"><span>Quick view</span></a>
-                                    <a href="#" class="btn-product-icon btn-compare"
-                                        title="Compare"><span>Compare</span></a>
-                                </div><!-- End .product-action -->
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-                                </div><!-- End .product-action -->
-                            </figure><!-- End .product-media -->
-
-                            <div class="product-body">
-                                <div class="product-cat">
-                                    <a href="#" ></a>
-                                </div><!-- End .product-cat -->
-                                <h3 class="product-title"><a href="product.html"></a></h3>
-                                <!-- End .product-title -->
-                                <div class="product-price">
-                                    $60.00
-                                </div><!-- End .product-price -->
-                                <div class="product-nav product-nav-dots">
-                                    <a href="#" class="active" style="background: #e5dcb1;"><span class="sr-only">Color
-                                            name</span></a>
-                                    <a href="#" style="background: #bacbd8;"><span class="sr-only">Color name</span></a>
-                                </div><!-- End .product-nav -->
-                            </div><!-- End .product-body -->
+        <div class="checkout-discount">
+            <form action="#">
+                <input type="text" class="form-control" required="" id="checkout-discount-input">
+                <label for="checkout-discount-input" class="text-truncate">Have a coupon? <span>Click here to enter your code</span></label>
+            </form>
+        </div><!-- End .checkout-discount -->
+<form [formGroup]="checkOutForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-lg-9">
+            <h2 class="checkout-title">Billing Details</h2><!-- End .checkout-title -->
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label>First Name *</label>
+                        <input  type="text" class="form-control" formControlName="firstName" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
+                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                            <div *ngIf="f.firstName.errors.required">First Name is required</div>
                         </div>
-                    </div>
-            
-                    <div class="owl-item active" style="width: 277px; margin-right: 20px;">
-                        <div class="product product-4">
-                            <figure class="product-media">
-                                <span class="product-label label-primary">Sale</span>
-                                <a href="product.html">
-                                    <img src="assets/images/demos/demo-12/products/product-2.jpg" alt="Product image"
-                                        class="product-image">
-                                    <img src="assets/images/demos/demo-12/products/product-2-2.jpg" alt="Product image"
-                                        class="product-image-hover">
-                                </a>
+                        
+                    </div><!-- End .col-sm-6 -->
 
-                                <div class="product-action-vertical">
-                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to
-                                            wishlist</span></a>
-                                    <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
-                                        title="Quick view"><span>Quick view</span></a>
-                                    <a href="#" class="btn-product-icon btn-compare"
-                                        title="Compare"><span>Compare</span></a>
-                                </div><!-- End .product-action -->
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-                                </div><!-- End .product-action -->
-                            </figure><!-- End .product-media -->
-
-                            <div class="product-body">
-                                <div class="product-cat">
-                                    <a href="#">Shoes</a>
-                                </div><!-- End .product-cat -->
-                                <h3 class="product-title"><a href="product.html">Sandals with lacing</a></h3>
-                                <!-- End .product-title -->
-
-                                <div class="product-price">
-                                    <span class="new-price">Now $70.00</span>
-                                    <span class="old-price">Was $84.00</span>
-                                </div><!-- End .product-price -->
-                            </div><!-- End .product-body -->
+                    <div class="col-sm-6">
+                        <label>Last Name *</label>
+                        <input type="text" class="form-control" formControlName="lastName" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }">
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
                         </div>
-                    </div>
-                    <div class="owl-item active" style="width: 277px; margin-right: 20px;">
-                        <div class="product product-4">
-                            <figure class="product-media">
-                                <a href="product.html">
-                                    <img src="assets/images/demos/demo-12/products/product-3.jpg" alt="Product image"
-                                        class="product-image">
-                                    <img src="assets/images/demos/demo-12/products/product-3-2.jpg" alt="Product image"
-                                        class="product-image-hover">
-                                </a>
+                    </div><!-- End .col-sm-6 -->
+                </div><!-- End .row -->
 
-                                <div class="product-action-vertical">
-                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to
-                                            wishlist</span></a>
-                                    <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
-                                        title="Quick view"><span>Quick view</span></a>
-                                    <a href="#" class="btn-product-icon btn-compare"
-                                        title="Compare"><span>Compare</span></a>
-                                </div><!-- End .product-action -->
+                <label>Company Name (Optional)</label>
+                <input type="text" class="form-control" formControlName="companyName">
 
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-                                </div><!-- End .product-action -->
-                            </figure><!-- End .product-media -->
-
-                            <div class="product-body">
-                                <div class="product-cat">
-                                    <a href="#">Clothing</a>
-                                </div><!-- End .product-cat -->
-                                <h3 class="product-title"><a href="product.html">Paper bag trousers</a></h3>
-                                <!-- End .product-title -->
-                                <div class="product-price">
-                                    $60.00
-                                </div><!-- End .product-price -->
-                                <div class="product-nav product-nav-dots">
-                                    <a href="#" class="active" style="background: #9fac76;"><span class="sr-only">Color
-                                            name</span></a>
-                                    <a href="#" style="background: #333333;"><span class="sr-only">Color name</span></a>
-                                </div><!-- End .product-nav -->
-                            </div><!-- End .product-body -->
-                        </div>
-                    </div>
-                    <div class="owl-item active" style="width: 277px; margin-right: 20px;">
-                        <div class="product product-4">
-                            <figure class="product-media">
-                                <a href="product.html">
-                                    <img src="assets/images/demos/demo-12/products/product-4.jpg" alt="Product image"
-                                        class="product-image">
-                                    <img src="assets/images/demos/demo-12/products/product-4-2.jpg" alt="Product image"
-                                        class="product-image-hover">
-                                </a>
-
-                                <div class="product-action-vertical">
-                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to
-                                            wishlist</span></a>
-                                    <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
-                                        title="Quick view"><span>Quick view</span></a>
-                                    <a href="#" class="btn-product-icon btn-compare"
-                                        title="Compare"><span>Compare</span></a>
-                                </div><!-- End .product-action -->
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-                                </div><!-- End .product-action -->
-                            </figure><!-- End .product-media -->
-
-                            <div class="product-body">
-                                <div class="product-cat">
-                                    <a href="#">Handbags</a>
-                                </div><!-- End .product-cat -->
-                                <h3 class="product-title"><a href="product.html">Bucket bag</a></h3>
-                                <!-- End .product-title -->
-                                <div class="product-price">
-                                    $350.00
-                                </div><!-- End .product-price -->
-                            </div><!-- End .product-body -->
-                        </div>
-                    </div>
-                    <div class="owl-item" style="width: 277px; margin-right: 20px;">
-                        <div class="product product-4">
-                            <figure class="product-media">
-                                <a href="product.html">
-                                    <img src="assets/images/demos/demo-12/products/product-5.jpg" alt="Product image"
-                                        class="product-image">
-                                    <img src="assets/images/demos/demo-12/products/product-5-2.jpg" alt="Product image"
-                                        class="product-image-hover">
-                                </a>
-
-                                <div class="product-action-vertical">
-                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to
-                                            wishlist</span></a>
-                                    <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
-                                        title="Quick view"><span>Quick view</span></a>
-                                    <a href="#" class="btn-product-icon btn-compare"
-                                        title="Compare"><span>Compare</span></a>
-                                </div><!-- End .product-action -->
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-                                </div><!-- End .product-action -->
-                            </figure><!-- End .product-media -->
-
-                            <div class="product-body">
-                                <div class="product-cat">
-                                    <a href="#">Clothing</a>
-                                </div><!-- End .product-cat -->
-                                <h3 class="product-title"><a href="product.html">Silk-blend kaftan</a></h3>
-                                <!-- End .product-title -->
-                                <div class="product-price">
-                                    $370.00
-                                </div><!-- End .product-price -->
-                            </div><!-- End .product-body -->
-                        </div>
-                    </div>
-                    <div class="owl-item" style="width: 277px; margin-right: 20px;">
-                        <div class="product product-4">
-                            <figure class="product-media">
-                                <span class="product-label label-new">New</span>
-                                <a href="product.html">
-                                    <img src="assets/images/demos/demo-12/products/product-6.jpg" alt="Product image"
-                                        class="product-image">
-                                    <img src="assets/images/demos/demo-12/products/product-6-2.jpg" alt="Product image"
-                                        class="product-image-hover">
-                                </a>
-
-                                <div class="product-action-vertical">
-                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to
-                                            wishlist</span></a>
-                                    <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
-                                        title="Quick view"><span>Quick view</span></a>
-                                    <a href="#" class="btn-product-icon btn-compare"
-                                        title="Compare"><span>Compare</span></a>
-                                </div><!-- End .product-action -->
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-                                </div><!-- End .product-action -->
-                            </figure><!-- End .product-media -->
-
-                            <div class="product-body">
-                                <div class="product-cat">
-                                    <a href="#">Sandals</a>
-                                </div><!-- End .product-cat -->
-                                <h3 class="product-title"><a href="product.html">Spring Sandals</a></h3>
-                                <!-- End .product-title -->
-                                <div class="product-price">
-                                    $59.00
-                                </div><!-- End .product-price -->
-                            </div><!-- End .product-body -->
-                        </div>
-                    </div>
+                <label>Country *</label>
+                <input type="text" class="form-control" formControlName="countryName" [ngClass]="{ 'is-invalid': submitted && f.countryName.errors }">
+                <div *ngIf="submitted && f.countryName.errors" class="invalid-feedback">
+                    <div *ngIf="f.countryName.errors.required">Country Name is required</div>
                 </div>
-            </div>
-            <div class="owl-nav"><button type="button" role="presentation" class="owl-prev disabled"><i
-                        class="icon-angle-left"></i></button><button type="button" role="presentation"
-                    class="owl-next"><i class="icon-angle-right"></i></button></div>
-            <div class="owl-dots"><button role="button" class="owl-dot active"><span></span></button><button
-                    role="button" class="owl-dot"><span></span></button></div>
-        </div><!-- End .owl-carousel -->
-    </div><!-- End .container -->
+             
+                <label>Street address *</label>
+                <input type="text" class="form-control" placeholder="House number and Street name" formControlName="streetAddress" [ngClass]="{ 'is-invalid': submitted && f.streetAddress.errors }">
+                <div *ngIf="submitted && f.streetAddress.errors" class="invalid-feedback">
+                    <div *ngIf="f.streetAddress.errors.required">Address is required</div>
+                </div>
+
+                <input type="text" class="form-control" placeholder="Appartments, suite, unit etc ..."formControlName="appartmentAdress" [ngClass]="{ 'is-invalid': submitted && f.appartmentAdress.errors }">
+                <div *ngIf="submitted && f.appartmentAdress.errors" class="invalid-feedback">
+                    <div *ngIf="f.appartmentAdress.errors.required">Address is required</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label>Town / City *</label>
+                        <input type="text" class="form-control" formControlName="cityName" [ngClass]="{ 'is-invalid': submitted && f.cityName.errors }">
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastName.errors.required"> Town / City  is required</div>
+                        </div>
+                    </div><!-- End .col-sm-6 -->
+
+                    <div class="col-sm-6">
+                        <label>State / Country *</label>
+                        <input type="text" class="form-control" formControlName="stateName" [ngClass]="{ 'is-invalid': submitted && f.stateName.errors }">
+                        <div *ngIf="submitted && f.stateName.errors" class="invalid-feedback">
+                            <div *ngIf="f.stateName.errors.required"> State / Country is required</div>
+                        </div>
+                    </div><!-- End .col-sm-6 -->
+                </div><!-- End .row -->
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label>Postcode / ZIP *</label>
+                        <input type="text" class="form-control" formControlName="postcode" [ngClass]="{ 'is-invalid': submitted && f.postcode.errors }">
+                        <div *ngIf="submitted && f.postcode.errors" class="invalid-feedback">
+                            <div *ngIf="f.postcode.errors.required"> Postcode / ZIP is required</div>
+                        </div>
+                    </div><!-- End .col-sm-6 -->
+
+                    <div class="col-sm-6">
+                        <label>Phone *</label>
+                        <input type="tel" class="form-control" formControlName="phoneNumber" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }">
+                        <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+                            <div *ngIf="f.phoneNumber.errors.required"> Phone Number is required</div>
+                            <div *ngIf="f.phoneNumber.errors.pattern"> Enter a valid Phone Number</div>
+                        </div>
+                    </div><!-- End .col-sm-6 -->
+                </div><!-- End .row -->
+
+                <label>Email address *</label>
+                <input type="email" class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" >
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                </div>
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="checkout-create-acc">
+                    <label class="custom-control-label" for="checkout-create-acc">Create an account?</label>
+                </div><!-- End .custom-checkbox -->
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="checkout-diff-address">
+                    <label class="custom-control-label" for="checkout-diff-address">Ship to a different address?</label>
+                </div><!-- End .custom-checkbox -->
+
+                <label>Order notes (optional)</label>
+                <textarea class="form-control" cols="30" rows="4"
+                placeholder="Notes about your order, e.g. special notes for delivery" formControlName="desc"></textarea>
+        </div><!-- End .col-lg-9 -->
+        <aside class="col-lg-3">
+            <div class="summary">
+                <h3 class="summary-title">Your Order</h3><!-- End .summary-title -->
+
+                <table class="table table-summary">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td><a href="#">Beige knitted elastic runner shoes</a></td>
+                            <td>$84.00</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="#">Blue utility pinafore denimdress</a></td>
+                            <td>$76,00</td>
+                        </tr>
+                        <tr class="summary-subtotal">
+                            <td>Subtotal:</td>
+                            <td>$160.00</td>
+                        </tr><!-- End .summary-subtotal -->
+                        <tr>
+                            <td>Shipping:</td>
+                            <td>Free shipping</td>
+                        </tr>
+                        <tr class="summary-total">
+                            <td>Total:</td>
+                            <td>$160.00</td>
+                        </tr><!-- End .summary-total -->
+                    </tbody>
+                </table><!-- End .table table-summary -->
+
+                <div class="accordion-summary" id="accordion-payment">
+                    <div class="card">
+                        <div class="card-header" id="heading-1">
+                            <h2 class="card-title">
+                                <a role="button" data-toggle="collapse" href="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+                                    Direct bank transfer
+                                </a>
+                            </h2>
+                        </div><!-- End .card-header -->
+                        <div id="collapse-1" class="collapse show" aria-labelledby="heading-1" data-parent="#accordion-payment">
+                            <div class="card-body">
+                                Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
+                            </div><!-- End .card-body -->
+                        </div><!-- End .collapse -->
+                    </div><!-- End .card -->
+
+                    <div class="card">
+                        <div class="card-header" id="heading-2">
+                            <h2 class="card-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+                                    Check payments
+                                </a>
+                            </h2>
+                        </div><!-- End .card-header -->
+                        <div id="collapse-2" class="collapse" aria-labelledby="heading-2" data-parent="#accordion-payment">
+                            <div class="card-body">
+                                Ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. 
+                            </div><!-- End .card-body -->
+                        </div><!-- End .collapse -->
+                    </div><!-- End .card -->
+
+                    <div class="card">
+                        <div class="card-header" id="heading-3">
+                            <h2 class="card-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+                                    Cash on delivery
+                                </a>
+                            </h2>
+                        </div><!-- End .card-header -->
+                        <div id="collapse-3" class="collapse" aria-labelledby="heading-3" data-parent="#accordion-payment">
+                            <div class="card-body">Quisque volutpat mattis eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. 
+                            </div><!-- End .card-body -->
+                        </div><!-- End .collapse -->
+                    </div><!-- End .card -->
+
+                    <div class="card">
+                        <div class="card-header" id="heading-4">
+                            <h2 class="card-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+                                    PayPal <small class="float-right paypal-link">What is PayPal?</small>
+                                </a>
+                            </h2>
+                        </div><!-- End .card-header -->
+                        <div id="collapse-4" class="collapse" aria-labelledby="heading-4" data-parent="#accordion-payment">
+                            <div class="card-body">
+                                Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum.
+                            </div><!-- End .card-body -->
+                        </div><!-- End .collapse -->
+                    </div><!-- End .card -->
+
+                    <div class="card">
+                        <div class="card-header" id="heading-5">
+                            <h2 class="card-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+                                    Credit Card (Stripe)
+                                    <img src="assets/images/payments-summary.png" alt="payments cards">
+                                </a>
+                            </h2>
+                        </div><!-- End .card-header -->
+                        <div id="collapse-5" class="collapse" aria-labelledby="heading-5" data-parent="#accordion-payment">
+                            <div class="card-body"> Donec nec justo eget felis facilisis fermentum.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Lorem ipsum dolor sit ame.
+                            </div><!-- End .card-body -->
+                        </div><!-- End .collapse -->
+                    </div><!-- End .card -->
+                </div><!-- End .accordion -->
+
+                <button type="submit" class="btn btn-outline-primary-2 btn-order btn-block" >
+                    <span class="btn-text" >Place Order </span>
+                    <span class="btn-hover-text" >Proceed to Checkout</span>
+                </button>
+            </div><!-- End .summary -->
+        </aside><!-- End .col-lg-3 -->
+    </div><!-- End .row -->
+</form>
+</div>
 </div>

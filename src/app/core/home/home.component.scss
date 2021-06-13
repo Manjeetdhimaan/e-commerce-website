@@ -832,3 +832,32 @@
   .home{      
     transition: transform 0.4s ease;
   }
+
+  
+.icon-boxes-container {
+    padding-top: 0.4rem;
+    padding-bottom: 2.4rem;
+}
+.icon-box {
+    font-size: 1.4rem;
+}
+.icon-box-side {
+    margin-left: -1rem;
+}
+.icon-box-icon {
+    font-size: 3rem;
+    color: #c96;
+}
+.icon-box-content p {
+    letter-spacing: -0.01em;
+}
+.icon-box-side .icon-box-icon {
+    min-width: 4.2rem;
+    text-align: left;
+}
+.icon-box-side .icon-box-title {
+    font-weight: 400;
+    font-size: 1.4rem;
+    letter-spacing: -0.01em;
+}
+

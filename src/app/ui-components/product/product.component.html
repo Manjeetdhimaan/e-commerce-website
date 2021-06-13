@@ -1,0 +1,36 @@
+<div class="product product-4" >
+    <figure class="product-media">
+        <span *ngIf="data.label"
+        [class]="getLabelColor(data.label)"
+        >{{data.label}}</span>
+        <a href="product.html">
+            <img [src]='data.img[0]' alt="Product image" class="product-image">
+            <img [src]='data.img[1]' alt="Product image" class="product-image-hover">
+        </a>
+
+        <div class="product-action-vertical">
+            <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
+            <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
+            <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
+        </div><!-- End .product-action -->
+
+        <div class="product-action">
+            <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+        </div><!-- End .product-action -->
+    </figure><!-- End .product-media -->
+
+    <div class="product-body">
+        <div class="product-cat">
+            <a href="#">{{data.category }}</a>
+        </div><!-- End .product-cat -->
+        <h3 class="product-title"><a href="product.html">{{ data.subCategory }}</a></h3><!-- End .product-title -->
+        <div class="product-price">
+           <span *ngIf="!getLabel(data.label) ">{{ data.price | currency}}</span>
+           <span *ngIf="getLabel(data.label)" class="new-price">Now {{ data.price | currency}}</span>
+           <span *ngIf="getLabel(data.label)" class="old-price">Was {{ data.oldPrice | currency}}</span>
+        </div><!-- End .product-price -->
+        <div class="product-nav product-nav-dots" *ngIf="data.color">
+            <a href="#" *ngFor="let color of data.color;let index=index" class="" [style]='getColor(data,index)'><span class="sr-only">Color name</span></a>
+        </div><!-- End .product-nav -->
+    </div><!-- End .product-body -->
+</div>

@@ -13,6 +13,7 @@
     position: relative;
     -ms-touch-action: pan-Y;
     touch-action: manipulation;
+    backface-visibility: hidden;
     -moz-backface-visibility: hidden;
 }
 .owl-carousel .owl-stage:after {
@@ -26,13 +27,16 @@
 .owl-carousel .owl-stage-outer {
     position: relative;
     overflow: hidden;
+    transform: translate3d(0px, 0px, 0px);
     -webkit-transform: translate3d(0px, 0px, 0px);
 }
 .owl-carousel .owl-wrapper,
 .owl-carousel .owl-item {
+    backface-visibility: visible;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
@@ -41,6 +45,7 @@
     position: relative;
     min-height: 1px;
     float: left;
+    backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -157,6 +162,7 @@
     cursor: pointer;
     z-index: 1;
     -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     transition: transform 100ms ease;
 }
 .owl-carousel .owl-video-play-icon:hover {
@@ -243,6 +249,7 @@
     background: transparent;
     display: block;
     -webkit-backface-visibility: visible;
+    backface-visibility: visible;
     transition: all 0.3s ease;
     border-radius: 30px;
 }
@@ -345,6 +352,7 @@
     border: 0.1rem solid #d7d7d7;
     background: transparent;
     display: block;
+    backface-visibility: visible;
     -webkit-backface-visibility: visible;
     transition: all 0.3s ease;
     border-radius: 30px;
@@ -444,7 +452,7 @@
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-    background-image: url("../../../../assets/images/nav-prev-shadow.png");
+    background-image: url("../../../assets/images/nav-prev-shadow.png");
 }
 .owl-full .owl-nav .disabled {
     opacity: 0;
@@ -460,7 +468,7 @@
 .owl-full .owl-nav .owl-next:before {
     left: auto;
     right: 100%;
-    background-image: url("../../../../assets/images/nav-next-shadow.png");
+    background-image: url("../../../assets/images/nav-next-shadow.png");
 }
 .owl-full.carousel-with-shadow .owl-stage-outer {
     padding-left: 0;
@@ -495,6 +503,7 @@
     border: 0.1rem solid #c96;
     background: transparent;
     display: block;
+    backface-visibility: visible;
     -webkit-backface-visibility: visible;
     transition: all 0.3s ease;
     border-radius: 30px;
@@ -612,6 +621,7 @@
   .product.product-4 .btn-product:hover span,
   .product.product-4 .btn-product:focus span {
     margin-left: 0;
+    color: #fff;
   }
   
   .product.product-4 .btn-product:not(:hover):not(:focus) {
