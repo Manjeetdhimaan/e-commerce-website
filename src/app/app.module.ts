@@ -14,6 +14,9 @@ import { NewArrivalsComponent } from './core/home/new-arrivals/new-arrivals.comp
 import { UIComponentsModule } from './ui-components/ui-components.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { NgxNumberSpinnerModule } from 'ngx-number-spinner';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     MobileMenuComponent,
     NewArrivalsComponent,
+    ShoppingCartComponent,
 
   ],
   imports: [
@@ -33,7 +37,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     IvyCarouselModule,
     CarouselModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxNumberSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

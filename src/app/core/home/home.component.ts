@@ -52,6 +52,7 @@ export class HomeComponent implements OnInit {
   }
   carouselHeight = 480;
   cellsToShow = 4;
+  
   products = [{
     category: 'clothing',
     subCategory: 'Linen-blend dress',

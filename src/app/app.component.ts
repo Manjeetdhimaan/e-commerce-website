@@ -50,4 +50,8 @@ export class AppComponent {
     this.toggleMobileMenu = !this.toggleMobileMenu
   }
  
+
+  change(value: number): void {
+    console.log(value);
+}
 }
