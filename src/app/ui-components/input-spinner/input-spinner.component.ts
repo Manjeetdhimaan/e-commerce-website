@@ -19,10 +19,8 @@ counter:number=1
   @Input('value') value: number = this.min;
   @Input('step') step: number = 1;
   @Input('direction') direction: 'horizontal'|'vertical' = 'horizontal';
-
   @Output('change') change: EventEmitter<number> = new EventEmitter();
   disabled: boolean;
-
   _propagateChange:any = () => {};
   _onTouched: () => void;
 
@@ -47,7 +45,7 @@ counter:number=1
   inc():void {
     let value = this.value + this.step
     if(value >= this.min && value <= this.max){
-      this.value = value;
+      this.value= value;
       this._onChange();
     }
   }

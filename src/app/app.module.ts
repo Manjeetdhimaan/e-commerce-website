@@ -16,6 +16,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { NgxNumberSpinnerModule } from 'ngx-number-spinner';
+import { ShoppingCartService } from './shopping-cart/shopping-cart.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { NgxNumberSpinnerModule } from 'ngx-number-spinner';
     ReactiveFormsModule,
     NgxNumberSpinnerModule
   ],
-  providers: [],
+  providers: [ShoppingCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

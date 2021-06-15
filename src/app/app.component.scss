@@ -1,0 +1,17 @@
+.dropdown-menu{
+    display: block;
+    width: 300px;
+    z-index: 100;
+    font-size: 1.3rem;
+    z-index: 1001;
+    border: none;
+    margin: 1px 0 0;
+    padding: 2.2rem 3rem 2.5rem;
+    border-radius: 0;
+    border: none;
+    box-shadow: 5px 10px 16px rgb(51 51 51 / 5%), -5px 10px 16px rgb(51 51 51 / 5%);
+    background-color: #fff;
+    visibility: visible;
+    opacity: 1;
+    transition: all .25s;
+}
