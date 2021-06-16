@@ -1,54 +1,14 @@
-<!-- <div [className]="toggleMobileMenu?'page-transform page-wrapper':'page-wrapper'"  >
+<div [className]="toggleMobileMenu?'page-transform page-wrapper':'page-wrapper'"  >
     <app-header  (mobileMenuClose)="mobileMenuToggle()" ></app-header >
-    <app-home ></app-home>
-    <app-footer></app-footer>
+
+    <router-outlet></router-outlet>
+      
 </div> 
-  -->
+<app-wishlist></app-wishlist>
 
 <div>
     <!-- <app-new-arrivals></app-new-arrivals> -->
-    <app-shopping-cart></app-shopping-cart>
   
 </div>
 
-<div class="dropdown cart-dropdown">
-    <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-        <i class="icon-shopping-cart"></i>
-        <span class="cart-count">{{cartList.length}}</span>
-        <span class="cart-txt">{{ subTotal() | currency }}</span>
-    </a>
 
-    <div class="dropdown-menu dropdown-menu-right">
-        <div class="dropdown-cart-products">
-            <div class="product" *ngFor="let list of cartList;let i = index">
-                <div class="product-cart-details">
-                    <h4 class="product-title">
-                        <a href="product.html">{{list.title}}</a>
-                    </h4>
-
-                    <span class="cart-product-info">
-                        <span class="cart-product-qty">{{list.quantity}}</span>
-                        x {{ list.price }}
-                    </span>
-                </div><!-- End .product-cart-details -->
-
-                <figure class="product-image-container">
-                    <a href="product.html" class="product-image">
-                        <img [src]="list.imageSrc" alt="product">
-                    </a>
-                </figure>
-                <a href="#" class="btn-remove" title="Remove Product" (click)="deleteListItem(i)">
-                    <i class="icon-close"></i></a>
-            </div><!-- End .product -->
-        <div class="dropdown-cart-total">
-            <span>Total</span>
-
-            <span class="cart-total-price">{{ subTotal() | currency }}</span>
-        </div><!-- End .dropdown-cart-total -->
-
-        <div class="dropdown-cart-action">
-            <a href="cart.html" class="btn btn-primary">View Cart</a>
-            <a href="checkout.html" class="btn btn-outline-primary-2"><span>Checkout</span><i class="icon-long-arrow-right"></i></a>
-        </div><!-- End .dropdown-cart-total -->
-    </div><!-- End .dropdown-menu -->
-</div>

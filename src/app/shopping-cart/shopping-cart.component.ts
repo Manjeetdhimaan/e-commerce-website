@@ -1,4 +1,4 @@
-import { Component, OnInit, Output ,EventEmitter, Input, DoCheck} from '@angular/core';
+import { Component, OnInit, DoCheck} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ShoppingCart } from './shopping-cart.model';
 import { ShoppingCartService } from './shopping-cart.service';

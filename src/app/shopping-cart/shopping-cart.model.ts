@@ -1,5 +1,6 @@
 
 export class ShoppingCart {
+    public id:any;
     public imageSrc: string;
     public title: string;
     public price: any;
@@ -7,11 +8,13 @@ export class ShoppingCart {
 
     
   
-    constructor(imageSrc: string, title: string, price: any, quantity:any) {
+    constructor(id:any ,imageSrc: string, title: string, price: any, quantity:any) {
+        this.id=id;
         this.imageSrc = imageSrc;
         this.title = title;
         this.price = price;
         this.quantity = quantity;
+       
     }
   }
   
