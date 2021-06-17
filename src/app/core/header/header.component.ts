@@ -1,7 +1,7 @@
-import { AfterViewInit, Component, DoCheck, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Component,  ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { ShoppingCart } from 'src/app/shopping-cart/shopping-cart.model';
 import { ShoppingCartService } from 'src/app/shopping-cart/shopping-cart.service';
+import { WishlistService } from 'src/app/wishlist/wishlist.service';
 
 @Component({
   selector: 'app-header',
@@ -9,25 +9,28 @@ import { ShoppingCartService } from 'src/app/shopping-cart/shopping-cart.service
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  constructor(private shoppingCartService: ShoppingCartService) { }
+  constructor(private shoppingCartService: ShoppingCartService, private wishlistservice:WishlistService) { }
 
   
   @ViewChild('menu') menuFocus?: ElementRef;
-  @ViewChild('searchInput') searchInput?: ElementRef;
+  @ViewChild('searchInput') searchInput: ElementRef;
   toggleMobileMenu = false;
   searchToggle = false;
   hover = false
   @Output() mobileMenuClose = new EventEmitter();
 
   cartList: ShoppingCart[] = []
-
+  
+  wishList: any[]=[]
 
   ngOnInit() {
     this.cartList = this.shoppingCartService.getCartItem();
+    this.wishList = this.wishlistservice.getWishListItem()
   }
 
   ngDoCheck() {
     this.cartList = this.shoppingCartService.getCartItem();
+    this.wishList = this.wishlistservice.getWishListItem()
   }
 
   
@@ -39,7 +42,7 @@ export class HeaderComponent implements OnInit {
 
   toggleSearch() {
     this.searchToggle = !this.searchToggle
-    var focus = this.searchInput?.nativeElement
+    var focus = this.searchInput.nativeElement
     setTimeout(() => {// this will make the execution after the above boolean has changed;
       focus.focus();
     }, 0);
@@ -70,5 +73,17 @@ export class HeaderComponent implements OnInit {
   }
   
    /*shopping cart method end*/
+   isExpanded=false
+   toggleCartListMenu(){
+   this.isExpanded = !this.isExpanded;
+   }
+
+
+   onFocusOutEvent(event: any){
+    this.searchToggle=false;
+    console.log(event.target.value);
+
+  }
+
 }
 

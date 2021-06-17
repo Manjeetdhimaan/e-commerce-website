@@ -18,6 +18,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { NgxNumberSpinnerModule } from 'ngx-number-spinner';
 import { ShoppingCartService } from './shopping-cart/shopping-cart.service';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { WishlistService } from './wishlist/wishlist.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     ReactiveFormsModule,
     NgxNumberSpinnerModule
   ],
-  providers: [ShoppingCartService],
+  providers: [ShoppingCartService,WishlistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

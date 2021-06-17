@@ -32,10 +32,7 @@ new ShoppingCart(
     }
     deleteListItem(index:number){
         this.cartList.splice(index,1)
-    
-        // this.cartList = this.cartList.filter(item => item !== item);
       }
      
       
-    
 }

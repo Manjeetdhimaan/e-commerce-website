@@ -18,7 +18,7 @@
                     <nav class="main-nav">
                         <ul class="menu sf-arrows sf-js-enabled" style="touch-action: pan-y;">
                             <li class="megamenu-container home">
-                                <a routerLink="">Home</a>
+                                <a routerLink="/home">Home</a>
                                
                             <li>
                                 <a class="sf-with-ul" (mouseenter)="hoverToggle()" (mouseleave)="hoverToggle()">
@@ -247,33 +247,34 @@
                     </nav><!-- End .main-nav -->
 
                     <div class="header-search">
-                        <a href="#" [className]="!searchToggle?'search-toggle':'search-toggle active' " role="button"
+                        <a  [className]="!searchToggle?'search-toggle':'search-toggle active' " role="button"
                             (click)="toggleSearch() ">
                             <i class="icon-search"></i>
                         </a>
-                        <form action="#" method="get">
+                        <form  method="get">
                             <div [className]="!searchToggle?'header-search-wrapper': 'header-search-wrapper show'">
                                 <label for="q" class="sr-only">Search</label>
-                                <input type="search" class="form-control" name="q" id="q" placeholder="Search in..."
+                                <input (focusout)="onFocusOutEvent($event)" type="search" class="form-control" name="q" id="q" placeholder="Search in..."
                                     required="" #searchInput>
                             </div><!-- End .header-search-wrapper -->
                         </form>
                     </div><!-- End .header-search -->
 
-                    <a href="wishlist.html" class="wishlist-link">
+                    <a routerLink="/wishlist" class="wishlist-link">
                         <i class="icon-heart-o"></i>
-                        <span class="wishlist-count">3</span>
+                        <span class="wishlist-count">{{wishList.length}}</span>
                     </a>
 
                    
-<div class="dropdown cart-dropdown">
-    <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+<div [ngClass]="!isExpanded?'dropdown cart-dropdown':'dropdown cart-dropdown show'">
+    <a   class="dropdown-toggle" role="button" (click)="toggleCartListMenu()">
         <i class="icon-shopping-cart"></i>
-        <span class="cart-count">{{cartList.length}}</span>
+        <span  class="cart-count">{{cartList.length}}</span>
         <span class="cart-txt">{{ subTotal() | currency }}</span>
     </a>
 
-    <div class="dropdown-menu dropdown-menu-right">
+    <div  [ngClass]="!isExpanded?'dropdown-menu dropdown-menu-right':'dropdown-menu dropdown-menu-right show'"
+    style="position: absolute">
         <div class="dropdown-cart-products">
             <div class="product" *ngFor="let list of cartList;let i = index">
                 <div class="product-cart-details">
@@ -302,7 +303,7 @@
         </div><!-- End .dropdown-cart-total -->
 
         <div class="dropdown-cart-action">
-            <a routerLink="shoppingCart" class="btn btn-primary">View Cart</a>
+            <a routerLink="/shoppingCart" class="btn btn-primary">View Cart</a>
             <a href="checkout.html" class="btn btn-outline-primary-2"><span>Checkout</span><i class="icon-long-arrow-right"></i></a>
         </div><!-- End .dropdown-cart-total -->
     </div><!-- End .dropdown-menu -->
