@@ -12,17 +12,11 @@ new ShoppingCart(
     '84.00',
     '1'),
 new ShoppingCart( 
-    '2',
+    '2q',
     'assets/images/products/table/product-2.jpg',
     'Blue utility pinafore denim dress',
     '76.00',
-    '1'),
-new ShoppingCart( 
-    '3',
-    'assets/images/products/table/product-3.jpg',
-    'Orange saddle lock front chain cross body bag',
-    '91.00',
-    '1'),
+    '1')
 ]
 
     constructor(){ }
@@ -33,6 +27,14 @@ new ShoppingCart(
     deleteListItem(index:number){
         this.cartList.splice(index,1)
       }
-     
+    onaddItemToCart(item:any){
+        if (this.cartList.some(obj => obj.id === item.id)) {
+            this.cartList.push()
+          }
+          else {
+            this.cartList.push(item)
+          }
+      
+    } 
       
 }

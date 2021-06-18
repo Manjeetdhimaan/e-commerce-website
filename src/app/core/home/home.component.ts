@@ -54,61 +54,77 @@ export class HomeComponent implements OnInit {
   cellsToShow = 4;
   
   products = [{
+    id:'a1',
     category: 'clothing',
     subCategory: 'Linen-blend dress',
     label: '',
     price: '60.00',
     oldPrice: '',
     img: ['1', '1-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
-    color: ["#e5dcb1;", "#bacbd8;"]
+    color: ["#e5dcb1;", "#bacbd8;"],
+    quantity:'1',
+    stockStatus:'in stock'
   },
   {
+    id:'a2',
     category: 'shoes',
     subCategory: 'Sandlas with lacing',
     label: 'Sale',
     price: '70.00',
     oldPrice: '90.00',
     img: ['2', '2-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
-    color: []
+    color: [],
+    quantity:'1',
+    stockStatus:'in stock'
   },
   {
+    id:'a3',
     category: 'clothing',
     subCategory: 'Paper bag trousers',
     label: '',
     price: '60.00',
     oldPrice: '',
     img: ['3', '3-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
-    color: ["#9fac76;", "#333333;"]
+    color: ["#9fac76;", "#333333;"],
+    quantity:'1',
+    stockStatus:'in stock'
 
   },
   {
+    id:'a4',
     category: 'handbags',
     subCategory: 'Bucket bag',
     label: '',
     price: '350.00',
     oldPrice: '',
     img: ['4', '4-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
-
-    color: []
+    color: [],
+    quantity:'1',
+    stockStatus:'out of stock'
   },
   {
+    id:'a5',
     category: 'clothing',
     subCategory: 'Silk-blended kaftan',
     label: '',
     price: '370.00',
     oldPrice: '',
     img: ['5', '5-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
-
-    color: []
+    color: [],
+    quantity:'1',
+    stockStatus:'in stock'
   },
   {
+    id:'a6',
     category: 'Sandles',
     subCategory: 'Spring sandlas',
     label: 'New',
     price: '59.00',
     oldPrice: '',
     img: ['6', '6-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
-    color: []
+    color: [],
+    quantity:'1',
+    stockStatus:'out of stock'
   }
   ]
   /*properties carousel component end */

@@ -10,6 +10,7 @@ export class MobileMenuComponent implements OnInit {
 
   toggleMobileMenu = false;
   @Output() mobileMenuClose = new EventEmitter();
+  @Output() clickOutside = new EventEmitter();
   ngOnInit(): void {
   }
 
@@ -20,5 +21,9 @@ export class MobileMenuComponent implements OnInit {
   toggle(){
     this.mobileMenuClose.emit(null);
   }
-  
+
+
+  onClickedOutside(){
+    this.clickOutside.emit(null)
+  }
 }

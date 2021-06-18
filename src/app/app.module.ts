@@ -19,6 +19,7 @@ import { NgxNumberSpinnerModule } from 'ngx-number-spinner';
 import { ShoppingCartService } from './shopping-cart/shopping-cart.service';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { WishlistService } from './wishlist/wishlist.service';
+import { ClickOutsideModule } from 'ng-click-outside';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { WishlistService } from './wishlist/wishlist.service';
     CarouselModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxNumberSpinnerModule
+    NgxNumberSpinnerModule,
+    ClickOutsideModule
   ],
   providers: [ShoppingCartService,WishlistService],
   bootstrap: [AppComponent]

@@ -1,4 +1,47 @@
+<div>
 <header class="header header-9 ">
+    <div class="header-top">
+        <div class="container">
+            <div class="header-left">
+                <div class="header-dropdown">
+                    <a href="#">Usd</a>
+                    <div class="header-menu">
+                        <ul>
+                            <li><a href="#">Eur</a></li>
+                            <li><a href="#">Usd</a></li>
+                        </ul>
+                    </div><!-- End .header-menu -->
+                </div><!-- End .header-dropdown -->
+
+                <div class="header-dropdown">
+                    <a href="#">Eng</a>
+                    <div class="header-menu">
+                        <ul>
+                            <li><a href="#">English</a></li>
+                            <li><a href="#">French</a></li>
+                            <li><a href="#">Spanish</a></li>
+                        </ul>
+                    </div><!-- End .header-menu -->
+                </div><!-- End .header-dropdown -->
+            </div><!-- End .header-left -->
+
+            <div class="header-right">
+                <ul class="top-menu">
+                    <li>
+                        <a href="#">Links</a>
+                        <ul>
+                            <li><a href="tel:#"><i class="icon-phone"></i>Call: +0123 456 789</a></li>
+                            <li><a routerLink="/wishlist" ><i class="icon-heart-o"></i>Wishlist <span class="wishlist-count">({{wishList.length}})</span></a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#signin-modal" data-toggle="modal"><i class="icon-user"></i>Login</a></li>
+                        </ul>
+                    </li>
+                </ul><!-- End .top-menu -->
+            </div><!-- End .header-right -->
+        </div><!-- End .container -->
+    </div>
+
     <div class="sticky-wrapper">
         <div class="header-middle sticky-header">
             <div class="container">
@@ -9,7 +52,7 @@
                     </button>
 
                     <a href="index.html" class="logo">
-                        <img src="../../../assets/images/demos/demo-12/logo.png" alt="Molla Logo" width="82"
+                        <img src="../../../assets/images/logo.png" alt="Molla Logo" width="82"
                             height="25">
                     </a>
                 </div><!-- End .header-left -->
@@ -246,40 +289,58 @@
                         </ul><!-- End .menu -->
                     </nav><!-- End .main-nav -->
 
-                    <div class="header-search">
+                    <div class="header-search" (focusout)="onFocusOutEvent($event)" >
                         <a  [className]="!searchToggle?'search-toggle':'search-toggle active' " role="button"
-                            (click)="toggleSearch() ">
+                            (click)="toggleSearch()"  >
                             <i class="icon-search"></i>
                         </a>
                         <form  method="get">
                             <div [className]="!searchToggle?'header-search-wrapper': 'header-search-wrapper show'">
                                 <label for="q" class="sr-only">Search</label>
-                                <input (focusout)="onFocusOutEvent($event)" type="search" class="form-control" name="q" id="q" placeholder="Search in..."
+                                <input  type="search" class="form-control" name="q" id="q" placeholder="Search in..."
                                     required="" #searchInput>
                             </div><!-- End .header-search-wrapper -->
                         </form>
                     </div><!-- End .header-search -->
 
-                    <a routerLink="/wishlist" class="wishlist-link">
-                        <i class="icon-heart-o"></i>
-                        <span class="wishlist-count">{{wishList.length}}</span>
-                    </a>
+                    <div class="dropdown compare-dropdown">
+                        <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static" title="Compare Products" aria-label="Compare Products">
+                            <i class="icon-random"></i>
+                        </a>
 
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <ul class="compare-products">
+                                <li class="compare-product">
+                                    <a  class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
+                                    <h6 class="compare-product-title"><a>Blue Night Dress</a></h6>
+                                </li>
+                                <li class="compare-product">
+                                    <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
+                                    <h6 class="compare-product-title"><a>White Long Skirt</a></h6>
+                                </li>
+                            </ul>
+
+                            <div class="compare-actions">
+                                <a href="#" class="action-link">Clear All</a>
+                                <a href="#" class="btn btn-outline-primary-2"><span>Compare</span><i class="icon-long-arrow-right"></i></a>
+                            </div>
+                        </div><!-- End .dropdown-menu -->
+                    </div>
                    
-<div [ngClass]="!isExpanded?'dropdown cart-dropdown':'dropdown cart-dropdown show'">
-    <a   class="dropdown-toggle" role="button" (click)="toggleCartListMenu()">
+<div   (clickOutside)="onClickedOutside($event)" [ngClass]="!isExpanded?'dropdown cart-dropdown':'dropdown cart-dropdown show'">
+    <a   class="dropdown-toggle" role="button" (click)="toggleCartListMenu($event)">
         <i class="icon-shopping-cart"></i>
         <span  class="cart-count">{{cartList.length}}</span>
         <span class="cart-txt">{{ subTotal() | currency }}</span>
     </a>
 
-    <div  [ngClass]="!isExpanded?'dropdown-menu dropdown-menu-right':'dropdown-menu dropdown-menu-right show'"
+    <div   [ngClass]="!isExpanded?'dropdown-menu dropdown-menu-right':'dropdown-menu dropdown-menu-right show'"
     style="position: absolute">
         <div class="dropdown-cart-products">
             <div class="product" *ngFor="let list of cartList;let i = index">
                 <div class="product-cart-details">
                     <h4 class="product-title">
-                        <a href="product.html">{{list.title}}</a>
+                        <a href="product.html">{{list.subCategory}}</a>
                     </h4>
 
                     <span class="cart-product-info">
@@ -296,7 +357,7 @@
                 <a class="btn-remove" title="Remove Product" (click)="deleteListItem(i)">
                     <i class="icon-close"></i></a>
             </div><!-- End .product -->
-        <div class="dropdown-cart-total">
+        <div  class="dropdown-cart-total">
             <span>Total</span>
 
             <span class="cart-total-price">{{ subTotal() | currency }}</span>
@@ -313,7 +374,9 @@
             </div><!-- End .container -->
         </div>
     </div><!-- End .header-middle -->
+
 </header>
-<div [className]="toggleMobileMenu?'mmenu-active':''" #menu>
-    <app-mobile-menu (mobileMenuClose)="mobileMenuToggle()"></app-mobile-menu>
+<div [className]="toggleMobileMenu?'mmenu-active':''" #menu >
+    <app-mobile-menu (mobileMenuClose)="mobileMenuToggle()" ></app-mobile-menu>
+</div>
 </div>

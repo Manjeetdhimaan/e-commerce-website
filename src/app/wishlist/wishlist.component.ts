@@ -53,4 +53,7 @@ export class WishlistComponent implements OnInit , DoCheck {
     }
   }
 
+  onAddItemToCart(item:any){
+    this.shoppingCartService.onaddItemToCart(item)
+  }
 }

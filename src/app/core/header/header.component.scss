@@ -1,13 +1,12 @@
-
-
 @import url("https://fonts.googleapis.com/css?family=Poppins:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800");
+
 .header-9 {
-    position: absolute;
+    position: relative;
     left: 0;
     right: 0;
     top: 0;
     z-index: 1040;
-    background-color: transparent;
+    background-color:transparent;
     transition: transform 0.4s ease;
 }
 .header.header-9 .mobile-menu-toggler {
@@ -145,7 +144,6 @@
     padding-right: 3.64vw;
 }
 
-
 .icon-facebook-f:before {
     content: "\e803";
 }
@@ -206,7 +204,7 @@ body {
 }
 .btn {
     display: inline-block;
-    text-transform: uppercase;
+    
     font-weight: 500;
     text-decoration: none;
     font-size: 1.3rem;
@@ -346,7 +344,7 @@ img.molla-lz[data-oi*=".png"] {
 }
 
 .header .header-9 {
-    margin-top: -0.4rem;  
+    margin-top: -0.4rem;
 }
 
 #header .header-left,
@@ -587,7 +585,6 @@ img.molla-lz[data-oi*=".png"] {
     }
 }
 
-
 @media (max-width: 991px) {
     #header .menu {
         display: none;
@@ -614,10 +611,9 @@ img.molla-lz[data-oi*=".png"] {
 }
 ::ng-deep .page-transform .header {
     transform: translateX(200px);
-  }
+}
 
-
- .btn-outline-primary-2 {
+.btn-outline-primary-2 {
     color: #c96;
     background-color: transparent;
     background-image: none;
@@ -630,23 +626,78 @@ img.molla-lz[data-oi*=".png"] {
     font-size: 1.1rem;
     margin-left: -1.2rem;
 }
-  .btn-outline-primary-2:hover{
-     color: #fff;
-     background-color: #c96;
-  }
+.btn-outline-primary-2:hover {
+    color: #fff;
+    background-color: #c96;
+}
 
 .menu .megamenu-container {
     position: static;
     margin-right: -2rem;
 }
-.menu .megamenu-container>a::before{
+.menu .megamenu-container > a::before {
     margin-right: 3.5rem;
 }
-.btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show>.btn-primary.dropdown-toggle {
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
     color: #fff;
     background-color: #a6c76c;
     border-color: #a6c76c;
     box-shadow: none;
 }
 
+.header-9 .wishlist-link:not(:hover):not(:focus),
+.header-9 .search-toggle:not(:hover):not(:focus):not(.active),
+.header-9 .mobile-menu-toggler,
+.header-9 .wishlist-link:not(:hover):not(:focus),
+.header-9 .menu > li:not(:hover):not(.active):not(.show) > a,
+.header-9 .mobile-menu-toggler {
+    color: rgb(97, 94, 94);
+}
 
+.cart-dropdown .dropdown-toggle i {
+    display: inline-block;
+    margin-top: -3px;
+    color: rgb(97, 94, 94);
+}
+.header-search .header-search-wrapper {
+    border-radius: 20px;
+    width: 100%;
+    min-width: 270px;
+    background-color: #fff;
+    border: 0.1rem solid #ebebeb;
+    border-radius: 20px;
+    z-index: 10;
+}
+.header.header-9 .main-nav li a:hover {
+    color: #c96;
+}
+
+.header.header-9 
+.cart-dropdown:not(:hover):not(.show) 
+.dropdown-toggle, .header.header-9
+.compare-dropdown:not(:hover):not(.show) 
+.dropdown-toggle{
+    color: grey;
+}
+.compare-actions .btn {
+    font-size: 1.3rem;
+    min-width: 110px;
+    margin-left: auto;
+    padding-top: .65rem;
+    padding-bottom: 1rem;
+}
+.btn-outline-primary-2 {
+    color: #c96;
+    background-color: transparent;
+    background-image: none;
+    border-color: #c96;
+    box-shadow: none;
+}
+.icon-search:hover{
+    color: #c96;
+}

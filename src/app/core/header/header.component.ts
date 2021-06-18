@@ -1,4 +1,4 @@
-import { Component,  ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Component,  ElementRef, EventEmitter, HostListener, OnInit, Output, ViewChild } from '@angular/core';
 import { ShoppingCart } from 'src/app/shopping-cart/shopping-cart.model';
 import { ShoppingCartService } from 'src/app/shopping-cart/shopping-cart.service';
 import { WishlistService } from 'src/app/wishlist/wishlist.service';
@@ -41,7 +41,7 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleSearch() {
-    this.searchToggle = !this.searchToggle
+    this.searchToggle = !this.searchToggle;
     var focus = this.searchInput.nativeElement
     setTimeout(() => {// this will make the execution after the above boolean has changed;
       focus.focus();
@@ -74,16 +74,22 @@ export class HeaderComponent implements OnInit {
   
    /*shopping cart method end*/
    isExpanded=false
-   toggleCartListMenu(){
+   toggleCartListMenu(event:any){
    this.isExpanded = !this.isExpanded;
+    
    }
-
 
    onFocusOutEvent(event: any){
     this.searchToggle=false;
-    console.log(event.target.value);
+   
+  }
+ 
 
+  onClickedOutside(event:any){
+    this.isExpanded=false
+  
+  }
+      
   }
 
-}
 

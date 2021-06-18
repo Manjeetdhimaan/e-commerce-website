@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ShoppingCartService } from 'src/app/shopping-cart/shopping-cart.service';
+import { WishlistService } from 'src/app/wishlist/wishlist.service';
 
 @Component({
   selector: 'app-product',
@@ -6,11 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
+  constructor(private shoppingCartServive:ShoppingCartService, private wishlistService:WishlistService) { }
+
   @Input() category: string = '';
   @Input() subCategory: string = '';
-
-  constructor() { }
-
+ 
+   
+  
   ngOnInit(): void {
   }
   @Input() data:any={};
@@ -41,4 +45,14 @@ export class ProductComponent implements OnInit {
     label = String(label).toLowerCase();
     return (label == this.labelMapping[label])?true:false
   }
+
+  onAddtoCart(item:any){
+    this.shoppingCartServive.onaddItemToCart(item)
+  }
+  onAddItemToWishList(item:any){
+    this.wishlistService.onAddItemToWishList(item)
+  }
+
+
+
 }
