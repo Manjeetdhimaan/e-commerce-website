@@ -4,7 +4,7 @@ export class WishlistService {
 private wishList:any[]=[
     {
         id: '1',
-        imgSrc: 'assets/images/products/table/product-1.jpg',
+        imageSrc: 'assets/images/products/table/product-1.jpg',
         subCategory: 'Beige knitted elastic runner shoes',
         price: '84.00',
         stockStatus: 'In stock',
@@ -12,7 +12,7 @@ private wishList:any[]=[
       },
       {
         id: '2q',
-        imgSrc: 'assets/images/products/table/product-2.jpg',
+        imageSrc: 'assets/images/products/table/product-2.jpg',
         subCategory: 'Blue utility pinafore denim dress',
         price: '76.00',
         stockStatus: 'In stock',
@@ -20,7 +20,7 @@ private wishList:any[]=[
       },
       {
         id: '3q',
-        imgSrc: 'assets/images/products/table/product-3.jpg',
+        imageSrc: 'assets/images/products/table/product-3.jpg',
         subCategory: 'Orange saddle lock front chain cross body bag',
         price: '52.00',
         stockStatus: 'Out of stock',
@@ -39,7 +39,7 @@ private wishList:any[]=[
     deleteWishListItem(index:number){
         this.wishList.splice(index,1)
       }
-     onAddItemToWishList( item:any){
+     onAddItemToWishList(item:any){
       if (this.wishList.some(obj => obj.id === item.id)) {
         this.wishList.push()
       }

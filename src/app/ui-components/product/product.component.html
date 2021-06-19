@@ -3,14 +3,14 @@
         <span *ngIf="data.label"
         [class]="getLabelColor(data.label)"
         >{{data.label}}</span>
-        <a href="product.html">
-            <img [src]='data.img[0]' alt="Product image" class="product-image">
-            <img [src]='data.img[1]' alt="Product image" class="product-image-hover">
+        <a (click)="onAddToProductDetail(data)" (click)="goToItems()">
+            <img [src]='data.imageSrc[0]' alt="Product image" class="product-image" >
+            <img [src]='data.imageSrc[1]' alt="Product image" class="product-image-hover" >
         </a>
 
         <div class="product-action-vertical">
             <a  class="btn-product-icon btn-wishlist btn-expandable" (click)="onAddItemToWishList(data)"><span>add to wishlist</span></a>
-            <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
+            <a  class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
             <a  class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
         </div><!-- End .product-action -->
 

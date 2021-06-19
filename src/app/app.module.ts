@@ -20,6 +20,9 @@ import { ShoppingCartService } from './shopping-cart/shopping-cart.service';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { WishlistService } from './wishlist/wishlist.service';
 import { ClickOutsideModule } from 'ng-click-outside';
+import { LogInComponent } from './core/log-in/log-in.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductDetailService } from './product-detail/product-detail.service';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,8 @@ import { ClickOutsideModule } from 'ng-click-outside';
     NewArrivalsComponent,
     ShoppingCartComponent,
     WishlistComponent,
+    LogInComponent,
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,7 @@ import { ClickOutsideModule } from 'ng-click-outside';
     NgxNumberSpinnerModule,
     ClickOutsideModule
   ],
-  providers: [ShoppingCartService,WishlistService],
+  providers: [ShoppingCartService,WishlistService,ProductDetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

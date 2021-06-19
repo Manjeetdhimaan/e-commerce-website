@@ -8,7 +8,9 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  
+ 
+   
   /* properties of base home carousel starts*/
   width: string = "1349px";
   images = [1].map((n) => `../../../assets/images/demos/demo-12/slider/slide-${n}.jpg`);
@@ -60,7 +62,7 @@ export class HomeComponent implements OnInit {
     label: '',
     price: '60.00',
     oldPrice: '',
-    img: ['1', '1-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
+    imageSrc: ['1', '1-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
     color: ["#e5dcb1;", "#bacbd8;"],
     quantity:'1',
     stockStatus:'in stock'
@@ -72,7 +74,7 @@ export class HomeComponent implements OnInit {
     label: 'Sale',
     price: '70.00',
     oldPrice: '90.00',
-    img: ['2', '2-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
+    imageSrc: ['2', '2-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
     color: [],
     quantity:'1',
     stockStatus:'in stock'
@@ -84,7 +86,7 @@ export class HomeComponent implements OnInit {
     label: '',
     price: '60.00',
     oldPrice: '',
-    img: ['3', '3-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
+    imageSrc: ['3', '3-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
     color: ["#9fac76;", "#333333;"],
     quantity:'1',
     stockStatus:'in stock'
@@ -97,7 +99,7 @@ export class HomeComponent implements OnInit {
     label: '',
     price: '350.00',
     oldPrice: '',
-    img: ['4', '4-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
+    imageSrc: ['4', '4-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
     color: [],
     quantity:'1',
     stockStatus:'out of stock'
@@ -109,7 +111,7 @@ export class HomeComponent implements OnInit {
     label: '',
     price: '370.00',
     oldPrice: '',
-    img: ['5', '5-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
+    imageSrc: ['5', '5-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
     color: [],
     quantity:'1',
     stockStatus:'in stock'
@@ -121,7 +123,7 @@ export class HomeComponent implements OnInit {
     label: 'New',
     price: '59.00',
     oldPrice: '',
-    img: ['6', '6-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
+    imageSrc: ['6', '6-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
     color: [],
     quantity:'1',
     stockStatus:'out of stock'

@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck} from '@angular/core';
+import { Component, OnInit, DoCheck, ViewChild, ElementRef} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ShoppingCart } from './shopping-cart.model';
 import { ShoppingCartService } from './shopping-cart.service';
@@ -17,11 +17,12 @@ export class ShoppingCartComponent implements OnInit , DoCheck{
   
   shippingForm:FormGroup
 
-
+@ViewChild('n') spinnerValue:ElementRef<any>
   cartList:ShoppingCart[]=[]
 
   ngDoCheck(){
     this.cartList=this.shoppingCartService.getCartItem();
+   
   }
   ngOnInit(): void {
    this.cartList=this.shoppingCartService.getCartItem();
@@ -43,7 +44,7 @@ getTotal(){
   onInputSpinnerChange(value:any, item:any){
     item.quantity = value
   }
-
+      
   subTotal(){
     return Number(this.cartList.reduce((acc, item) => {
         return acc + (item.price * item.quantity);  

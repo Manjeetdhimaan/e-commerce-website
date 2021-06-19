@@ -1,14 +1,19 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ProductDetailService } from 'src/app/product-detail/product-detail.service';
 import { ShoppingCartService } from 'src/app/shopping-cart/shopping-cart.service';
 import { WishlistService } from 'src/app/wishlist/wishlist.service';
-
+import { Router , ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-  constructor(private shoppingCartServive:ShoppingCartService, private wishlistService:WishlistService) { }
+  constructor(private shoppingCartServive:ShoppingCartService,
+     private wishlistService:WishlistService,
+     private productDetailService:ProductDetailService,
+     private route: ActivatedRoute,
+     private router:Router) { }
 
   @Input() category: string = '';
   @Input() subCategory: string = '';
@@ -53,6 +58,11 @@ export class ProductComponent implements OnInit {
     this.wishlistService.onAddItemToWishList(item)
   }
 
+   onAddToProductDetail(item:any){
+     this.productDetailService.getProductDetailtem(item)
+   }
 
-
+   goToItems() {
+    this.router.navigate(['product-detail']);
+  }
 }
