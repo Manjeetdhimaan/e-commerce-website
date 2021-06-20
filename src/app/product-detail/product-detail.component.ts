@@ -14,15 +14,18 @@ export class ProductDetailComponent implements OnInit {
      private shoppingCartService:ShoppingCartService,
      private wishListService:WishlistService) { }
 
+     width='width:40%'
+
 productdetail:any[]
    show=false
   ngOnInit(): void {
+    debugger
     this.productdetail = this.productDetailService.getProductDetail()
     this.productdetail.some(obj =>  this.imagesrc = obj.imageSrc[0])
     if(this.productdetail.length !== 0){
          this.show=true
     }
-
+    
   }
   
   onAddItemToCart(item:any){
@@ -30,6 +33,7 @@ productdetail:any[]
   }
 
    onAddItemToWishlsit(item:any){
+     debugger
     this.wishListService.onAddItemToWishList(item)
    }
   onInputSpinnerChange(value:any, item:any){
@@ -43,4 +47,9 @@ productdetail:any[]
   console.log(this.imagesrc)
   }
      
+
+   getReviews(){
+    // this.productdetail.some(obj =>  this.width = 'width:'+((obj.reviews_rating_sum/obj.reviews_count)*100)/5+'%')
+    // console.log(this.width)
+   }
 }

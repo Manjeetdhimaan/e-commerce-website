@@ -351,7 +351,7 @@
 
                 <figure class="product-image-container">
                     <a href="product.html" class="product-image">
-                        <img [src]="list.imageSrc" alt="product">
+                        <img [src]="list.imageSrc[0]" alt="product">
                     </a>
                 </figure>
                 <a class="btn-remove" title="Remove Product" (click)="deleteListItem(i)">

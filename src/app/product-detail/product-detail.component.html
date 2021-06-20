@@ -74,9 +74,9 @@
 
                             <div class="ratings-container">
                                 <div class="ratings">
-                                    <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
+                                    <div class="ratings-val" [style]="width"></div><!-- End .ratings-val -->
                                 </div><!-- End .ratings -->
-                                <a class="ratings-text" href="#product-review-link" id="review-link">( 2 Reviews )</a>
+                                <a class="ratings-text" href="#product-review-link" id="review-link">({{data.reviews_count }} Reviews )</a>
                             </div><!-- End .rating-container -->
 
                             <div class="product-price">
@@ -84,7 +84,7 @@
                             </div><!-- End .product-price -->
 
                             <div class="product-content">
-                                <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus
+                                <p>  Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus
                                     libero eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus. </p>
                             </div><!-- End .product-content -->
                         
@@ -118,9 +118,8 @@
                             <div class="details-filter-row details-row-size">
                                 <label for="qty">Qty:</label>
                                 <div class="product-details-quantity">
-                                    <input type="number" id="qty" class="form-control" value="1" min="1" max="10"
-                                        step="1" data-decimals="0" required="" style="display: none;">
-                                    <app-input-spinner (change)="onInputSpinnerChange($event,data)"  ></app-input-spinner>
+                                    {{data.quantity}}
+                                    <app-input-spinner [value]="data.quantity" (change)="onInputSpinnerChange($event,data)"></app-input-spinner>
                                 </div><!-- End .product-details-quantity -->
                             </div><!-- End .details-filter-row -->  
 

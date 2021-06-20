@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
   carouselHeight = 480;
   cellsToShow = 4;
   
-  products = [{
+  products:any = [{
     id:'a1',
     category: 'clothing',
     subCategory: 'Linen-blend dress',
@@ -65,19 +65,23 @@ export class HomeComponent implements OnInit {
     imageSrc: ['1', '1-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
     color: ["#e5dcb1;", "#bacbd8;"],
     quantity:'1',
-    stockStatus:'in stock'
+    stockStatus:'in stock',
+    reviews_rating_sum:[3, 2 ,4].reduce((acc) => { return (acc)}),
+    "reviews_count": 2
   },
   {
     id:'a2',
     category: 'shoes',
     subCategory: 'Sandlas with lacing',
-    label: 'Sale',
+    label: 'Top',
     price: '70.00',
     oldPrice: '90.00',
     imageSrc: ['2', '2-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
     color: [],
     quantity:'1',
-    stockStatus:'in stock'
+    stockStatus:'in stock',
+    reviews_rating_sum: [5, 4].reduce((acc) => { return (acc)}),
+    "reviews_count": 2,
   },
   {
     id:'a3',
@@ -89,10 +93,15 @@ export class HomeComponent implements OnInit {
     imageSrc: ['3', '3-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
     color: ["#9fac76;", "#333333;"],
     quantity:'1',
-    stockStatus:'in stock'
+    stockStatus:'in stock',
+    reviews_rating_sum: [3, 2 ,4 , 4].reduce((acc) => { return (acc)}),
+    "reviews_count": 4
 
   },
+
+
   {
+
     id:'a4',
     category: 'handbags',
     subCategory: 'Bucket bag',
@@ -102,31 +111,37 @@ export class HomeComponent implements OnInit {
     imageSrc: ['4', '4-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
     color: [],
     quantity:'1',
-    stockStatus:'out of stock'
+    stockStatus:'in stock',
+    reviews_rating_sum: [3, 4, 3, 4, 2].reduce((acc) => { return (acc)}),
+    "reviews_count": 5
   },
   {
     id:'a5',
     category: 'clothing',
     subCategory: 'Silk-blended kaftan',
-    label: '',
+    label: 'new',
     price: '370.00',
     oldPrice: '',
     imageSrc: ['5', '5-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
     color: [],
     quantity:'1',
-    stockStatus:'in stock'
+    stockStatus:'in stock',
+    reviews_rating_sum: [1, 2].reduce((acc) => { return (acc)}),
+    "reviews_count": 1
   },
   {
     id:'a6',
     category: 'Sandles',
     subCategory: 'Spring sandlas',
-    label: 'New',
+    label: '',
     price: '59.00',
     oldPrice: '',
     imageSrc: ['6', '6-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
     color: [],
     quantity:'1',
-    stockStatus:'out of stock'
+    stockStatus:'out of stock',
+    reviews_rating_sum:[1, 2].reduce((acc) => { return (acc)}),
+    "reviews_count": 5
   }
   ]
   /*properties carousel component end */

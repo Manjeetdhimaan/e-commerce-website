@@ -43,7 +43,7 @@ counter:number=1
   }
 
   inc():void {
-    let value = this.value + this.step
+    let value = Number(this.value) + this.step
     if(value >= this.min && value <= this.max){
       this.value= value;
       this._onChange();
@@ -51,11 +51,12 @@ counter:number=1
   }
 
   dec():void {
-    let value = this.value - this.step
+    let value = Number(this.value) - this.step
     if(value >= this.min && value <= this.max){
       this.value = value;
       this._onChange();
     }
+    
   }
 
   private _onChange():void {
