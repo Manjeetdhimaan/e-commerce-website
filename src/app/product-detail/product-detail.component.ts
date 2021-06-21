@@ -10,46 +10,65 @@ import { ProductDetailService } from './product-detail.service';
 })
 export class ProductDetailComponent implements OnInit {
 
-  constructor(private productDetailService:ProductDetailService,
-     private shoppingCartService:ShoppingCartService,
-     private wishListService:WishlistService) { }
+  constructor(private productDetailService: ProductDetailService,
+    private shoppingCartService: ShoppingCartService,
+    private wishListService: WishlistService) { }
 
-     width='width:40%'
 
-productdetail:any[]
-   show=false
+  productdetail: any[]
+  show = false
   ngOnInit(): void {
-    debugger
     this.productdetail = this.productDetailService.getProductDetail()
-    this.productdetail.some(obj =>  this.imagesrc = obj.imageSrc[0])
-    if(this.productdetail.length !== 0){
-         this.show=true
-    }
-    
+    this.productdetail.some(obj => this.imagesrc = obj.imageSrc[0])
+    if (this.productdetail.length !== 0) {
+      this.show = true
+    } 
+    this.getTotalReviewsAvg()
+    // this.getSinglePersonReview();
   }
-  
-  onAddItemToCart(item:any){
+
+  onAddItemToCart(item: any) {
     this.shoppingCartService.onaddItemToCart(item)
   }
 
-   onAddItemToWishlsit(item:any){
-     debugger
+  onAddItemToWishlsit(item: any) {
+
     this.wishListService.onAddItemToWishList(item)
-   }
-  onInputSpinnerChange(value:any, item:any){
+  }
+  onInputSpinnerChange(value: any, item: any) {
     item.quantity = value
   }
 
-  imagesrc=""; 
-   
-  onChangeImgColor(imageNameObject:any){
-  this.imagesrc = imageNameObject;
-  console.log(this.imagesrc)
-  }
-     
 
-   getReviews(){
-    // this.productdetail.some(obj =>  this.width = 'width:'+((obj.reviews_rating_sum/obj.reviews_count)*100)/5+'%')
-    // console.log(this.width)
-   }
+
+  imagesrc = "";
+  onChangeImgColor(imageNameObject: any) {
+    this.imagesrc = imageNameObject;
+  }
+
+  // widthOfReviewStarRating:any =[]
+  getSinglePersonReview() {
+    // this.productdetail.some(obj => this.widthOfReviewStarRating = obj.reviews_rating.map((n:any)=>{return 'width:'+(n)*100/5+'%'}));
+    // console.log(this.widthOfReviewStarRating);
+  }
+
+  width = 0
+  getTotalReviewsAvg() {
+    debugger
+    this.productdetail.map(n => {  n.reviews_rating.some((obj:any) =>{ (this.width) += Number(obj.reviewRatingStar)}) })
+    console.log('width:'+(this.width*100/5)+'%')
+
+  }
+
+  labelStockStatus: any = {
+    'out of stock': 'out of stock'
+  }
+
+  getStockStatus(stockStatus: any) {
+    stockStatus = String(stockStatus).toLowerCase();
+    if (stockStatus == this.labelStockStatus[stockStatus]) {
+      return true;
+    }
+    return false;
+  }
 }

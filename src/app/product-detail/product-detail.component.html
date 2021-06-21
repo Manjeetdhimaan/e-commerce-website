@@ -23,8 +23,8 @@
         </div><!-- End .container -->
     </nav>
     <div class="page-content" >
-        <div class="container" *ngIf="show">
-            <div class="product-details-top"  *ngFor="let data of productdetail;let i=index">
+        <div class="container" *ngFor="let data of productdetail;let i=index">
+            <div class="product-details-top" *ngIf="show" >
                 <div class="row" >
                     <div class="col-md-6">
                         <div class="product-gallery product-gallery-vertical">
@@ -74,9 +74,9 @@
 
                             <div class="ratings-container">
                                 <div class="ratings">
-                                    <div class="ratings-val" [style]="width"></div><!-- End .ratings-val -->
+                                    <div class="ratings-val" [style]="'width:'+(width/data.reviews_rating.length)*100/5+'%'"></div><!-- End .ratings-val -->
                                 </div><!-- End .ratings -->
-                                <a class="ratings-text" href="#product-review-link" id="review-link">({{data.reviews_count }} Reviews )</a>
+                                <a class="ratings-text" href="#product-review-link" id="review-link">({{ data.reviews_rating.length }} Reviews )</a>
                             </div><!-- End .rating-container -->
 
                             <div class="product-price">
@@ -118,14 +118,13 @@
                             <div class="details-filter-row details-row-size">
                                 <label for="qty">Qty:</label>
                                 <div class="product-details-quantity">
-                                    {{data.quantity}}
                                     <app-input-spinner [value]="data.quantity" (change)="onInputSpinnerChange($event,data)"></app-input-spinner>
                                 </div><!-- End .product-details-quantity -->
                             </div><!-- End .details-filter-row -->  
 
                             <div class="product-details-action">
-                                <a (click)="onAddItemToCart(data)" class="btn-product btn-cart"><span>add to cart</span></a>
-
+                                <a *ngIf="!getStockStatus(data.stockStatus)"  (click)="onAddItemToCart(data)" class="btn-product btn-cart"><span>add to cart</span></a>
+                             <span *ngIf="getStockStatus(data.stockStatus)" class="out-of-stock">Out of stock</span>
                                 <div class="details-action-wrapper">
                                     <a (click)="onAddItemToWishlsit(data)" class="btn-product btn-wishlist" title="Wishlist"><span>Add to
                                             Wishlist</span></a>
@@ -176,7 +175,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" id="product-review-link" data-toggle="tab" href="#product-review-tab"
-                            role="tab" aria-controls="product-review-tab" aria-selected="true">Reviews (2)</a>
+                            role="tab" aria-controls="product-review-tab" aria-selected="true">Reviews ({{data.reviews_rating.length}})</a>
                     </li>
                 </ul>
                 <div class="tab-content">
@@ -184,12 +183,7 @@
                         aria-labelledby="product-desc-link">
                         <div class="product-desc-content">
                             <h3>Product Information</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat
-                                mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper
-                                suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam
-                                porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Phasellus ultrices
-                                nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique
-                                cursus. </p>
+                            <p>{{data.description}}</p>
                             <ul>
                                 <li>Nunc nec porttitor turpis. In eu risus enim. In vitae mollis elit. </li>
                                 <li>Vivamus finibus vel mauris ut vehicula.</li>
@@ -241,14 +235,14 @@
                     <div class="tab-pane fade active show" id="product-review-tab" role="tabpanel"
                         aria-labelledby="product-review-link">
                         <div class="reviews">
-                            <h3>Reviews (2)</h3>
+                            <h3>Reviews ({{data.reviews_rating.length}})</h3>
                             <div class="review">
-                                <div class="row no-gutters">
+                                <div class="row no-gutters"  *ngFor="let review of data.reviews_rating">
                                     <div class="col-auto">
-                                        <h4><a href="#">Samanta J.</a></h4>
+                                        <h4><a >{{review.reviewersName}}</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings">
-                                                <div class="ratings-val" style="width: 80%;"></div>
+                                                <div class="ratings-val" [style]="'width:'+(review.reviewRatingStar*100)/5+'%'"></div>
                                                 <!-- End .ratings-val -->
                                             </div><!-- End .ratings -->
                                         </div><!-- End .rating-container -->
@@ -272,34 +266,7 @@
                                 </div><!-- End .row -->
                             </div><!-- End .review -->
 
-                            <div class="review">
-                                <div class="row no-gutters">
-                                    <div class="col-auto">
-                                        <h4><a href="#">John Doe</a></h4>
-                                        <div class="ratings-container">
-                                            <div class="ratings">
-                                                <div class="ratings-val" style="width: 100%;"></div>
-                                                <!-- End .ratings-val -->
-                                            </div><!-- End .ratings -->
-                                        </div><!-- End .rating-container -->
-                                        <span class="review-date">5 days ago</span>
-                                    </div><!-- End .col -->
-                                    <div class="col">
-                                        <h4>Very good</h4>
-
-                                        <div class="review-content">
-                                            <p>Sed, molestias, tempore? Ex dolor esse iure hic veniam laborum blanditiis
-                                                laudantium iste amet. Cum non voluptate eos enim, ab cumque nam, modi,
-                                                quas iure illum repellendus, blanditiis perspiciatis beatae!</p>
-                                        </div><!-- End .review-content -->
-
-                                        <div class="review-action">
-                                            <a href="#"><i class="icon-thumbs-up"></i>Helpful (0)</a>
-                                            <a href="#"><i class="icon-thumbs-down"></i>Unhelpful (0)</a>
-                                        </div><!-- End .review-action -->
-                                    </div><!-- End .col-auto -->
-                                </div><!-- End .row -->
-                            </div><!-- End .review -->
+                            
                         </div><!-- End .reviews -->
                     </div><!-- .End .tab-pane -->
                 </div><!-- End .tab-content -->

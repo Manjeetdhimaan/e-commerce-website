@@ -61,7 +61,6 @@ counter:number=1
 
   private _onChange():void {
     this._propagateChange(this.value);
-
     this.change.emit(this.value);
   }
 

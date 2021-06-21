@@ -12466,6 +12466,7 @@ button:focus {
     opacity: 0;
     z-index: 2;
     visibility: hidden;
+    backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
 .portfolio-overlay .portfolio-content.portfolio-content-center {
@@ -16357,6 +16358,7 @@ button:focus {
     border: 0.1rem solid #d7d7d7;
     background: transparent;
     display: block;
+    backface-visibility: visible;
     -webkit-backface-visibility: visible;
     transition: all .3s ease;
     border-radius: 30px

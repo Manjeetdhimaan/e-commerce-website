@@ -65,9 +65,21 @@ export class HomeComponent implements OnInit {
     imageSrc: ['1', '1-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
     color: ["#e5dcb1;", "#bacbd8;"],
     quantity:'1',
-    stockStatus:'in stock',
-    reviews_rating_sum:[3, 2 ,4].reduce((acc) => { return (acc)}),
-    "reviews_count": 2
+    stockStatus:'Out of stock',
+    reviews_rating: [
+      {
+      reviewRatingStar:4,
+      reviewersName:"Nirmal"
+    },
+      {
+      reviewRatingStar:5,
+      reviewersName:"Navjeet Singh"
+    }
+  ],
+    description:`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus cum
+    dolores assumenda asperiores facilis porro reprehenderit animi culpa
+    atque blanditiis commodi perspiciatis doloremque, possimus, explicabo,
+    autem fugit beatae quae voluptas!`
   },
   {
     id:'a2',
@@ -80,8 +92,21 @@ export class HomeComponent implements OnInit {
     color: [],
     quantity:'1',
     stockStatus:'in stock',
-    reviews_rating_sum: [5, 4].reduce((acc) => { return (acc)}),
-    "reviews_count": 2,
+    reviews_rating: [
+      {
+      reviewRatingStar:4,
+      reviewersName:"Karan"
+    },
+      {
+      reviewRatingStar:3,
+      reviewersName:"Ekam"
+    },
+      {
+      reviewRatingStar:5,
+      reviewersName:"Aman"
+    }
+  ],
+    description:''
   },
   {
     id:'a3',
@@ -94,8 +119,21 @@ export class HomeComponent implements OnInit {
     color: ["#9fac76;", "#333333;"],
     quantity:'1',
     stockStatus:'in stock',
-    reviews_rating_sum: [3, 2 ,4 , 4].reduce((acc) => { return (acc)}),
-    "reviews_count": 4
+    reviews_rating:  [
+      {
+      reviewRatingStar:3,
+      reviewersName:"Davinder"
+    },
+      {
+      reviewRatingStar:2,
+      reviewersName:"Mehak"
+    },
+      {
+      reviewRatingStar:3,
+      reviewersName:"Fateh"
+    }
+  ],
+    description:''
 
   },
 
@@ -112,8 +150,21 @@ export class HomeComponent implements OnInit {
     color: [],
     quantity:'1',
     stockStatus:'in stock',
-    reviews_rating_sum: [3, 4, 3, 4, 2].reduce((acc) => { return (acc)}),
-    "reviews_count": 5
+    reviews_rating: [
+      {
+      reviewRatingStar:2,
+      reviewersName:"Navjeet Singh"
+    },
+      {
+      reviewRatingStar:2,
+      reviewersName:"Rajveer Kaur"
+    },
+      {
+      reviewRatingStar:3,
+      reviewersName:"Inderjeet Singh"
+    }
+  ],
+    description:''
   },
   {
     id:'a5',
@@ -126,8 +177,21 @@ export class HomeComponent implements OnInit {
     color: [],
     quantity:'1',
     stockStatus:'in stock',
-    reviews_rating_sum: [1, 2].reduce((acc) => { return (acc)}),
-    "reviews_count": 1
+    reviews_rating: [
+      {
+      reviewRatingStar:4,
+      reviewersName:"Harsimran"
+    },
+      {
+      reviewRatingStar:4,
+      reviewersName:"Sukhraas"
+    },
+      {
+      reviewRatingStar:3,
+      reviewersName:"Prabhgeet"
+    }
+  ],
+    description:''
   },
   {
     id:'a6',
@@ -140,8 +204,21 @@ export class HomeComponent implements OnInit {
     color: [],
     quantity:'1',
     stockStatus:'out of stock',
-    reviews_rating_sum:[1, 2].reduce((acc) => { return (acc)}),
-    "reviews_count": 5
+    reviews_rating: [
+      {
+      reviewRatingStar:4,
+      reviewersName:"Kulveer Kaur"
+    },
+      {
+      reviewRatingStar:5,
+      reviewersName:"Sukhjiner Singh"
+    },
+      {
+      reviewRatingStar:3,
+      reviewersName:"Karan"
+    }
+  ],
+    description:''
   }
   ]
   /*properties carousel component end */
