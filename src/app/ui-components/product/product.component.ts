@@ -71,9 +71,11 @@ export class ProductComponent implements OnInit {
 
   onAddtoCart(item: any) {
     this.shoppingCartServive.onaddItemToCart(item)
+    
   }
   onAddItemToWishList(item: any) {
     this.wishlistService.onAddItemToWishList(item)
+    
   }
 
   onAddToProductDetail(item: any) {

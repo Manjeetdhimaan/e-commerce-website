@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Pipe } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +23,13 @@ import { ClickOutsideModule } from 'ng-click-outside';
 import { LogInComponent } from './core/log-in/log-in.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductDetailService } from './product-detail/product-detail.service';
+import { TimeAgoPipe } from 'time-ago-pipe';
 
+@Pipe({
+    name: 'timeAgo',
+    pure: false
+})
+export class TimeAgoExtendsPipe extends TimeAgoPipe {}
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +42,7 @@ import { ProductDetailService } from './product-detail/product-detail.service';
     WishlistComponent,
     LogInComponent,
     ProductDetailComponent,
+    TimeAgoExtendsPipe
   ],
   imports: [
     BrowserModule,
@@ -48,7 +55,8 @@ import { ProductDetailService } from './product-detail/product-detail.service';
     FormsModule,
     ReactiveFormsModule,
     NgxNumberSpinnerModule,
-    ClickOutsideModule
+    ClickOutsideModule,
+ 
   ],
   providers: [ShoppingCartService,WishlistService,ProductDetailService],
   bootstrap: [AppComponent]

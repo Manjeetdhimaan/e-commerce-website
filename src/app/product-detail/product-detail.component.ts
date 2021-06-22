@@ -22,17 +22,20 @@ export class ProductDetailComponent implements OnInit {
     this.productdetail.some(obj => this.imagesrc = obj.imageSrc[0])
     if (this.productdetail.length !== 0) {
       this.show = true
-    } 
+    }
     this.getTotalReviewsAvg()
     // this.getSinglePersonReview();
+
   }
 
+
+   
   onAddItemToCart(item: any) {
-    this.shoppingCartService.onaddItemToCart(item)
+   this.shoppingCartService.onaddItemToCart(item)  
   }
 
+   
   onAddItemToWishlsit(item: any) {
-
     this.wishListService.onAddItemToWishList(item)
   }
   onInputSpinnerChange(value: any, item: any) {
@@ -54,9 +57,7 @@ export class ProductDetailComponent implements OnInit {
 
   width = 0
   getTotalReviewsAvg() {
-    debugger
-    this.productdetail.map(n => {  n.reviews_rating.some((obj:any) =>{ (this.width) += Number(obj.reviewRatingStar)}) })
-    console.log('width:'+(this.width*100/5)+'%')
+    this.productdetail.map(n => { n.reviews_rating.some((obj: any) => { (this.width) += Number(obj.reviewRatingStar) }) })
 
   }
 
@@ -71,4 +72,16 @@ export class ProductDetailComponent implements OnInit {
     }
     return false;
   }
+
+  
+
+  onLike(item: any) {
+    item.reviewlikes++
+  }
+
+  onDislike(item: any) {
+    item.reviewdislikes++
+  }
+   
+ 
 }

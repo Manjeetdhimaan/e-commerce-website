@@ -29,6 +29,7 @@ export class ShoppingCartComponent implements OnInit , DoCheck{
     this.shippingForm = this.formBuilder.group({
       shippingCost: [this.freeShipping ,[ Validators.required]]
     })
+  
   }
   
 getTotal(){

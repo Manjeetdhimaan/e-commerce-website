@@ -69,11 +69,17 @@ export class HomeComponent implements OnInit {
     reviews_rating: [
       {
       reviewRatingStar:4,
-      reviewersName:"Nirmal"
+      reviewersName:"Nirmal",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time: new Date().getTime()
     },
       {
       reviewRatingStar:5,
-      reviewersName:"Navjeet Singh"
+      reviewersName:"Navjeet Singh",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time: new Date().getTime()
     }
   ],
     description:`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus cum
@@ -95,15 +101,24 @@ export class HomeComponent implements OnInit {
     reviews_rating: [
       {
       reviewRatingStar:4,
-      reviewersName:"Karan"
+      reviewersName:"Karan",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:new Date().getTime()
     },
       {
       reviewRatingStar:3,
-      reviewersName:"Ekam"
+      reviewersName:"Ekam",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:new Date().getTime()
     },
       {
       reviewRatingStar:5,
-      reviewersName:"Aman"
+      reviewersName:"Aman",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:new Date().getTime()
     }
   ],
     description:''
@@ -122,15 +137,24 @@ export class HomeComponent implements OnInit {
     reviews_rating:  [
       {
       reviewRatingStar:3,
-      reviewersName:"Davinder"
+      reviewersName:"Davinder",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:new Date().getTime()
     },
       {
       reviewRatingStar:2,
-      reviewersName:"Mehak"
+      reviewersName:"Mehak",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:new Date().getTime()
     },
       {
       reviewRatingStar:3,
-      reviewersName:"Fateh"
+      reviewersName:"Fateh",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:new Date().getTime()
     }
   ],
     description:''
@@ -153,15 +177,24 @@ export class HomeComponent implements OnInit {
     reviews_rating: [
       {
       reviewRatingStar:2,
-      reviewersName:"Navjeet Singh"
+      reviewersName:"Navjeet Singh",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:new Date().getTime()
     },
       {
       reviewRatingStar:2,
-      reviewersName:"Rajveer Kaur"
+      reviewersName:"Rajveer Kaur",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:new Date().getTime()
     },
       {
       reviewRatingStar:3,
-      reviewersName:"Inderjeet Singh"
+      reviewersName:"Inderjeet Singh",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:new Date().getTime()
     }
   ],
     description:''
@@ -180,15 +213,24 @@ export class HomeComponent implements OnInit {
     reviews_rating: [
       {
       reviewRatingStar:4,
-      reviewersName:"Harsimran"
+      reviewersName:"Harsimran",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
     },
       {
       reviewRatingStar:4,
-      reviewersName:"Sukhraas"
+      reviewersName:"Sukhraas",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
     },
       {
       reviewRatingStar:3,
-      reviewersName:"Prabhgeet"
+      reviewersName:"Prabhgeet",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
     }
   ],
     description:''
@@ -207,15 +249,24 @@ export class HomeComponent implements OnInit {
     reviews_rating: [
       {
       reviewRatingStar:4,
-      reviewersName:"Kulveer Kaur"
+      reviewersName:"Kulveer Kaur",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
     },
       {
       reviewRatingStar:5,
-      reviewersName:"Sukhjiner Singh"
+      reviewersName:"Sukhjiner Singh",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
     },
       {
       reviewRatingStar:3,
-      reviewersName:"Karan"
+      reviewersName:"Karan",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
     }
   ],
     description:''
