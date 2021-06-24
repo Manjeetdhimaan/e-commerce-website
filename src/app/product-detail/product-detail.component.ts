@@ -40,6 +40,7 @@ export class ProductDetailComponent implements OnInit {
   }
   onInputSpinnerChange(value: any, item: any) {
     item.quantity = value
+    localStorage.setItem('productDetail', JSON.stringify(this.productdetail))
   }
 
 
@@ -57,8 +58,8 @@ export class ProductDetailComponent implements OnInit {
 
   width = 0
   getTotalReviewsAvg() {
+    debugger
     this.productdetail.map(n => { n.reviews_rating.some((obj: any) => { (this.width) += Number(obj.reviewRatingStar) }) })
-
   }
 
   labelStockStatus: any = {
@@ -82,6 +83,8 @@ export class ProductDetailComponent implements OnInit {
   onDislike(item: any) {
     item.reviewdislikes++
   }
-   
+
+  
+  
+    }
  
-}

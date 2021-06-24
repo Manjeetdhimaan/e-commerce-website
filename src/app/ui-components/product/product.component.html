@@ -1,9 +1,9 @@
-<div class="product product-4" >
+<div class="product product-7 text-center" >
     <figure class="product-media">
         <span *ngIf="data.label || getStockStatus(data.stockStatus)"
         [class]="getLabelColor(data.label,data)"
         >{{data.label}} </span>
-        <a (click)="onAddToProductDetail(data)" (click)="goToItems()">
+        <a (click)="onAddToProductDetail(data)" (click)="goToProductDetailComponent()">
             <img [src]='data.imageSrc[0]' alt="Product image" class="product-image" >
             <img [src]='data.imageSrc[1]' alt="Product image" class="product-image-hover" >
         </a>
@@ -33,6 +33,15 @@
             <a *ngFor="let color of data.color;let index=index" class="" [style]='getColor(data,index)'>
                 <span class="sr-only">Color name</span>
             </a>
+          
         </div><!-- End .product-nav -->
+        <div class="ratings-container">
+            <div class="ratings" >
+                <div class="ratings-val" 
+                style="width:40%">
+                </div><!-- End .ratings-val -->
+            </div><!-- End .ratings -->
+            <a class="ratings-text">( {{data.reviews_rating.length}} Reviews )</a>
+        </div>
     </div><!-- End .product-body -->
 </div>

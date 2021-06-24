@@ -18,7 +18,7 @@ export class ShoppingCartService {
 
 
   getCartItem() {
-    return this.cartList.slice();
+     return this.cartList.slice();
   }
 
   deleteListItem(index: number) {
@@ -27,7 +27,6 @@ export class ShoppingCartService {
   }
 
   onaddItemToCart(item: any) {
-    
     if (this.cartList.some(obj => obj.id === item.id)) {
       this.cartList.push()
     }

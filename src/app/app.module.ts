@@ -24,6 +24,7 @@ import { LogInComponent } from './core/log-in/log-in.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductDetailService } from './product-detail/product-detail.service';
 import { TimeAgoPipe } from 'time-ago-pipe';
+import { ProductListingComponent } from './product-listing/product-listing.component';
 
 @Pipe({
     name: 'timeAgo',
@@ -42,7 +43,8 @@ export class TimeAgoExtendsPipe extends TimeAgoPipe {}
     WishlistComponent,
     LogInComponent,
     ProductDetailComponent,
-    TimeAgoExtendsPipe
+    TimeAgoExtendsPipe,
+    ProductListingComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +58,7 @@ export class TimeAgoExtendsPipe extends TimeAgoPipe {}
     ReactiveFormsModule,
     NgxNumberSpinnerModule,
     ClickOutsideModule,
+    
  
   ],
   providers: [ShoppingCartService,WishlistService,ProductDetailService],

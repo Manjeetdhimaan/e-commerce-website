@@ -36,26 +36,26 @@
                                     </a>
                                 </figure><!-- End .product-main-image -->
 
-                                <div id="product-zoom-gallery" class="product-image-gallery">
-                                    <a class="product-gallery-item active" href="#"
+                                <div id="product-zoom-gallery" class="product-image-gallery" >
+                                    <a class='product-gallery-item ' (click)="onChangeImgColor(data.imageSrc[0])"
                                         data-image="assets/images/products/single/1.jpg"
                                         data-zoom-image="assets/images/products/single/1-big.jpg">
                                         <img [src]='data.imageSrc[0]' alt="product side">
                                     </a>
 
-                                    <a class="product-gallery-item" href="#"
+                                    <a class='product-gallery-item' (click)="onChangeImgColor(data.imageSrc[1])"
                                         data-image="assets/images/products/single/2.jpg"
                                         data-zoom-image="assets/images/products/single/2-big.jpg">
                                         <img [src]='data.imageSrc[1]' alt="product cross">
                                     </a>
 
-                                    <a class="product-gallery-item" href="#"
+                                    <a class='product-gallery-item' (click)="onChangeImgColor(data.imageSrc[0])"
                                         data-image="assets/images/products/single/3.jpg"
                                         data-zoom-image="assets/images/products/single/3-big.jpg">
                                         <img [src]='data.imageSrc[0]' alt="product with model">
                                     </a>
 
-                                    <a class="product-gallery-item" href="#"
+                                    <a class='product-gallery-item' (click)="onChangeImgColor(data.imageSrc[1])"
                                         data-image="assets/images/products/single/4.jpg"
                                         data-zoom-image="assets/images/products/single/4-big.jpg">
                                         <img [src]='data.imageSrc[1]' alt="product back">
@@ -73,11 +73,11 @@
                             <div class="ratings-container">
                                 <div class="ratings">
                                     <div class="ratings-val"
-                                        [style]="'width:'+(width/data.reviews_rating.length)*100/5+'%'"></div>
-                                    <!-- End .ratings-val -->
+                                        [style]="'width:'+(width/data.reviews_rating.length)*100/5+'%'">
+                                    </div>
                                 </div><!-- End .ratings -->
-                                <a class="ratings-text" href="#product-review-link" id="review-link">({{
-                                    data.reviews_rating.length }} Reviews )</a>
+                                <a class="ratings-text" id="review-link">
+                                    ({{data.reviews_rating.length }} Reviews )</a>
                             </div><!-- End .rating-container -->
 
                             <div class="product-price">

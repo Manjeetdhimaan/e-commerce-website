@@ -333,9 +333,10 @@ blockquote.text-white cite span {
     padding-right: 0;
 }
 .container {
+ 
     width: 1188px;
     max-width: 100%;
-    padding-left: 10px;
+    padding-left: 5px;
     padding-right: 10px;
 }
 .page-wrapper {
@@ -16423,4 +16424,7 @@ button:focus {
 }
 a{
     cursor: pointer;
+}
+.container{
+    max-width:1120px;
 }

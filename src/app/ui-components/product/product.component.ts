@@ -82,7 +82,7 @@ export class ProductComponent implements OnInit {
     this.productDetailService.getProductDetailtem(item)
   }
 
-  goToItems() {
+  goToProductDetailComponent() {
     this.router.navigate(['product-detail']);
   }
 

@@ -48,6 +48,7 @@ counter:number=1
       this.value= value;
       this._onChange();
     }
+    
   }
 
   dec():void {
