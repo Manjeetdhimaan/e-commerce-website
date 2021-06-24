@@ -58,7 +58,6 @@ export class ProductDetailComponent implements OnInit {
 
   width = 0
   getTotalReviewsAvg() {
-    debugger
     this.productdetail.map(n => { n.reviews_rating.some((obj: any) => { (this.width) += Number(obj.reviewRatingStar) }) })
   }
 

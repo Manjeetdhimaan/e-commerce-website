@@ -7,6 +7,7 @@ import { ProductComponent } from './product/product.component';
 import { BannerComponent } from './banner/banner.component';
 import { InputSpinnerComponent } from './input-spinner/input-spinner.component';
 import { FormsModule } from '@angular/forms';
+import { PriceSliderComponent } from './price-slider/price-slider.component';
 
 
 
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     AccordionItemComponent,
     ProductComponent,
     BannerComponent,
-    InputSpinnerComponent
+    InputSpinnerComponent,
+    PriceSliderComponent
   ],
   imports: [
     CommonModule,

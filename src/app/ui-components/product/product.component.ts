@@ -3,6 +3,7 @@ import { ProductDetailService } from 'src/app/product-detail/product-detail.serv
 import { ShoppingCartService } from 'src/app/shopping-cart/shopping-cart.service';
 import { WishlistService } from 'src/app/wishlist/wishlist.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Width } from 'ngx-owl-carousel-o/lib/services/carousel.service';
 
 @Component({
   selector: 'app-product',
@@ -18,10 +19,12 @@ export class ProductComponent implements OnInit {
 
   @Input() category: string = '';
   @Input() subCategory: string = '';
-
-
+  @Input() setClass: string = ''; 
+  @Input() hidden:string ='hidden'
+  @Input() imagesrc = "";
 
   ngOnInit(): void {
+    
   }
   @Input() data: any = {};
 
@@ -35,7 +38,7 @@ export class ProductComponent implements OnInit {
   labelColorMapping: any = {
     'new': "label-new",
     'sale': "label-primary",
-    'top':"label-top",
+    'top': "label-top",
     'out of stock': 'label-out'
   }
 
@@ -50,6 +53,7 @@ export class ProductComponent implements OnInit {
     } else {
       return "product-label";
     }
+   
   }
 
   getStockStatus(stockStatus: any) {
@@ -71,11 +75,11 @@ export class ProductComponent implements OnInit {
 
   onAddtoCart(item: any) {
     this.shoppingCartServive.onaddItemToCart(item)
-    
+
   }
   onAddItemToWishList(item: any) {
     this.wishlistService.onAddItemToWishList(item)
-    
+
   }
 
   onAddToProductDetail(item: any) {
@@ -86,5 +90,15 @@ export class ProductComponent implements OnInit {
     this.router.navigate(['product-detail']);
   }
 
+  getAverageRating(reviewsRatingList: any) {
+    let reviewratingAvg = (Number(reviewsRatingList.reduce((acc: any, item: any) => {
+      return (acc + (item.reviewRatingStar));
+    }, 0))) / reviewsRatingList.length;
+    return 'width:'+(reviewratingAvg*100)/5+'%'
+  }
 
+  
+  onChangeImgColor(imageNameObject: any) {
+    this.imagesrc = imageNameObject;
+  }
 }

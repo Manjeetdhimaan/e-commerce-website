@@ -10,16 +10,23 @@ export class ProductListingComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.getTotalReviewsAvg()
+
+   
   }
+
+  setClass:string = 'product product-7 text-center'
+  visible:string = "visible"
+
+
   productList:any = [{
-    id:'a1',
-    category: 'clothing',
-    subCategory: 'Linen-blend dress',
+    id:'ab1',
+    category: 'Women',
+    subCategory: 'Brown paperbag waist pencil skirt',
     label: '',
-    price: '60.00',
+    price: '60.00',  
     oldPrice: '',
-    imageSrc: ['1', '1-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
+    imageSrc: ['4'].map((n) => { return `assets/images/products/product-${n}.jpg` }),
+    colorChoiceImgSrc:['4' , '4-2', '4-3'].map((n) => { return `assets/images/products/product-${n}-thumb.jpg`}),
     quantity:'1',
     stockStatus:'Out of stock',
     reviews_rating: [
@@ -44,13 +51,14 @@ export class ProductListingComponent implements OnInit {
     autem fugit beatae quae voluptas!`
   },
   {
-    id:'a2',
-    category: 'shoes',
-    subCategory: 'Sandlas with lacing',
+    id:'ab2',
+    category: 'Dresses',
+    subCategory: 'Dark yellow lace cut out swing dress',
     label: 'Top',
-    price: '70.00',
+    price: '84.00',
     oldPrice: '90.00',
-    imageSrc: ['2', '2-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
+    imageSrc: ['5'].map((n) => { return `assets/images/products/product-${n}.jpg` }),
+    colorChoiceImgSrc:['5' , '5-2'].map((n) => { return `assets/images/products/product-${n}-thumb.jpg`}),   
     quantity:'1',
     stockStatus:'in stock',
     reviews_rating: [
@@ -86,13 +94,13 @@ export class ProductListingComponent implements OnInit {
     description:''
   },
   {
-    id:'a3',
-    category: 'clothing',
-    subCategory: 'Paper bag trousers',
+    id:'ab3',
+    category: 'Jackets',
+    subCategory: 'Khaki utility boiler jumpsuit',
     label: '',
-    price: '60.00',
+    price: '120.00',
     oldPrice: '',
-    imageSrc: ['3', '3-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
+    imageSrc: ['6'].map((n) => { return `assets/images/products/product-${n}.jpg`  }),
     quantity:'1',
     stockStatus:'in stock',
     reviews_rating:  [
@@ -125,14 +133,14 @@ export class ProductListingComponent implements OnInit {
 
   {
 
-    id:'a4',
-    category: 'handbags',
-    subCategory: 'Bucket bag',
+    id:'ab4',
+    category: 'Jeans',
+    subCategory: 'Blue utility pinafore denim dress',
     label: '',
-    price: '350.00',
+    price: '76.00',
     oldPrice: '',
-    imageSrc: ['4', '4-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
-    
+    imageSrc: ['7'].map((n) => { return `assets/images/products/product-${n}.jpg`}),
+    colorChoiceImgSrc: [],
     quantity:'1',
     stockStatus:'in stock',
     reviews_rating: [
@@ -161,14 +169,14 @@ export class ProductListingComponent implements OnInit {
     description:''
   },
   {
-    id:'a5',
-    category: 'clothing',
-    subCategory: 'Silk-blended kaftan',
+    id:'ab5',
+    category: 'Shoes',
+    subCategory: 'Beige knitted elastic runner shoes',
     label: 'new',
-    price: '370.00',
+    price: '84.00',  
     oldPrice: '',
-    imageSrc: ['5', '5-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
-    
+    imageSrc: ['8'].map((n) => { return `assets/images/products/product-${n}.jpg`}),
+    colorChoiceImgSrc:['8', '8-2'].map((n) => { return `assets/images/products/product-${n}-thumb.jpg`}),
     quantity:'1',
     stockStatus:'in stock',
     reviews_rating: [
@@ -197,14 +205,14 @@ export class ProductListingComponent implements OnInit {
     description:''
   },
   {
-    id:'a6',
-    category: 'Sandles',
-    subCategory: 'Spring sandlas',
+    id:'ab6',
+    category: 'Bags',
+    subCategory: 'Orange saddle lock front chain cross body bag',
     label: '',
-    price: '59.00',
+    price: '84.00',
     oldPrice: '',
-    imageSrc: ['6', '6-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
-    
+    imageSrc: ['9'].map((n) => { return `assets/images/products/product-${n}.jpg`}),
+    colorChoiceImgSrc:['9', '9-2', '9-3'].map((n) => { return `assets/images/products/product-${n}-thumb.jpg`}),
     quantity:'1',
     stockStatus:'out of stock',
     reviews_rating: [
@@ -233,13 +241,8 @@ export class ProductListingComponent implements OnInit {
     description:''
   }
   ]
-
-
-  width = 0
-  getTotalReviewsAvg() {
-    debugger
-   this.productList.map((n:any)  => {})
-    
-  }
+  dress:any='Dresses'
+ 
+  
 }
 

@@ -11,10 +11,9 @@ export class WishlistService {
 
   constructor() {
     this.data = localStorage.getItem('wishListData')
-    console.log(this.data)
     this.Json = JSON.parse(this.data);
     this.wishList = this.Json
-    console.log(this.Json)
+   
   }
 
 

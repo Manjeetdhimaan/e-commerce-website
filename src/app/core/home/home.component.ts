@@ -9,7 +9,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class HomeComponent implements OnInit {
   
- 
+ setClass:string ='product product-4'
    
   /* properties of base home carousel starts*/
   width: string = "1349px";
@@ -19,8 +19,7 @@ export class HomeComponent implements OnInit {
   /*end of properties of base home carousel*/
 
 
-
-
+  
 
   /*properties carousel component starts */
   customOptions: OwlOptions = {

@@ -10,10 +10,10 @@ export class ShoppingCartService {
   public userToken: any;
   constructor() {
     this.data = localStorage.getItem('cartData')
-    console.log(this.data)
+   
     this.Json = JSON.parse(this.data);
     this.cartList =this.Json
-    console.log(this.Json)
+    
   }
 
 

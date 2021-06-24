@@ -57,9 +57,7 @@ export class TimeAgoExtendsPipe extends TimeAgoPipe {}
     FormsModule,
     ReactiveFormsModule,
     NgxNumberSpinnerModule,
-    ClickOutsideModule,
-    
- 
+    ClickOutsideModule, 
   ],
   providers: [ShoppingCartService,WishlistService,ProductDetailService],
   bootstrap: [AppComponent]

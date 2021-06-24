@@ -36,30 +36,16 @@
                                     </a>
                                 </figure><!-- End .product-main-image -->
 
-                                <div id="product-zoom-gallery" class="product-image-gallery" >
-                                    <a class='product-gallery-item ' (click)="onChangeImgColor(data.imageSrc[0])"
-                                        data-image="assets/images/products/single/1.jpg"
+                                <div id="product-zoom-gallery" class="product-image-gallery">
+                                    <a data-image="assets/images/products/single/1.jpg"
                                         data-zoom-image="assets/images/products/single/1-big.jpg">
-                                        <img [src]='data.imageSrc[0]' alt="product side">
+                                        <a *ngFor="let image of data.imageSrc" (click)="onChangeImgColor(image)"
+                                            [ngClass]="image==imagesrc?'product-gallery-item active':'product-gallery-item'">
+                                            <img [src]='image' alt="product side">
+                                        </a>
+
                                     </a>
 
-                                    <a class='product-gallery-item' (click)="onChangeImgColor(data.imageSrc[1])"
-                                        data-image="assets/images/products/single/2.jpg"
-                                        data-zoom-image="assets/images/products/single/2-big.jpg">
-                                        <img [src]='data.imageSrc[1]' alt="product cross">
-                                    </a>
-
-                                    <a class='product-gallery-item' (click)="onChangeImgColor(data.imageSrc[0])"
-                                        data-image="assets/images/products/single/3.jpg"
-                                        data-zoom-image="assets/images/products/single/3-big.jpg">
-                                        <img [src]='data.imageSrc[0]' alt="product with model">
-                                    </a>
-
-                                    <a class='product-gallery-item' (click)="onChangeImgColor(data.imageSrc[1])"
-                                        data-image="assets/images/products/single/4.jpg"
-                                        data-zoom-image="assets/images/products/single/4-big.jpg">
-                                        <img [src]='data.imageSrc[1]' alt="product back">
-                                    </a>
                                 </div><!-- End .product-image-gallery -->
                             </div><!-- End .row -->
                         </div><!-- End .product-gallery -->

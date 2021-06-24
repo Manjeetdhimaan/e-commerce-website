@@ -1,7 +1,7 @@
 <main class="main">
     <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
         <div class="container">
-            <h1 class="page-title">List<span>Shop</span></h1>
+            <h1 class="page-title">Grid 2 Columns<span>Shop</span></h1>
         </div><!-- End .container -->
     </div><!-- End .page-header -->
     <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
@@ -37,7 +37,7 @@
                                 </div>
                             </div><!-- End .toolbox-sort -->
                             <div class="toolbox-layout">
-                                <a href="category-list.html" class="btn-layout active">
+                                <a href="category-list.html" class="btn-layout">
                                     <svg width="16" height="10">
                                         <rect x="0" y="0" width="4" height="4"></rect>
                                         <rect x="6" y="0" width="10" height="4"></rect>
@@ -46,7 +46,7 @@
                                     </svg>
                                 </a>
 
-                                <a href="category-2cols.html" class="btn-layout">
+                                <a routerLink="/product-listing" routerLinkActive="active" class="btn-layout">
                                     <svg width="10" height="10">
                                         <rect x="0" y="0" width="4" height="4"></rect>
                                         <rect x="6" y="0" width="4" height="4"></rect>
@@ -82,15 +82,18 @@
                         </div><!-- End .toolbox-right -->
                     </div><!-- End .toolbox -->
                     <div class="products mb-3">
-                        <div class="row justify-content-center">
-                    <div class="col-6" *ngFor="let data of productList">
-                        <div class="product product-7 text-center">
-                            <app-product [data]="data"></app-product>
-                           
-                        </div><!-- End .data -->
+                        <div class="row justify-content-center" >
+                            <div class="col-6" *ngFor="let data of productList">
+                                <div class="product product-4">
+                                <app-product 
+                                [data]="data" 
+                                [setClass]="setClass" 
+                                [hidden]="visible"
+                                [imagesrc]="data.imageSrc[0]"></app-product>
+                            </div>
+                            </div>
+                        </div>
                     </div>
-</div>
-</div>
                     <nav aria-label="Page navigation">
                         <ul class="pagination">
                             <li class="page-item disabled">
