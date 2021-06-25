@@ -22,7 +22,7 @@ export class ShoppingCartComponent implements OnInit , DoCheck{
 
   ngDoCheck(){
     this.cartList=this.shoppingCartService.getCartItem();
-   
+    localStorage.setItem('cartData', JSON.stringify(this.cartList))
   }
   ngOnInit(): void {
    this.cartList=this.shoppingCartService.getCartItem();

@@ -1087,6 +1087,10 @@ border-color: #c96;
 .social-icons a:not(:last-child) {
   margin-right: 1rem;
 }
+
+.no-border{
+  border-bottom: none;
+}
 @media (min-width: 992px) {
   .col-lg-1-5 {
     -ms-flex: 0 0 20%;

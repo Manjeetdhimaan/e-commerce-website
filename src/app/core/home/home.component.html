@@ -1,4 +1,5 @@
-<div class="home">
+<main class="main">
+
   <ngb-carousel [showNavigationIndicators]="showNavigationIndicators" [showNavigationArrows]="showNavigationArrows"
     [wrap]="false">
     <ng-template ngbSlide *ngFor="let img of images; index as i">
@@ -41,16 +42,13 @@
         <p class="title-desc">Aliquam tincidunt mauris eurisus</p>
         <!-- End .title-desc -->
       </div><!-- End .heading -->
-      <!--banner product starts-->
-
-
-
+     
       <!--owl product crousel component starts-->
       <owl-carousel-o [options]="customOptions">
         <ng-container *ngFor="let product of products">
           <ng-template carouselSlide>
             
-            <div class="owl-item active" style="width: 260px; margin-right: 10px;">
+            <div class="owl-item active" style="width: 255px; margin-right: 10px;">
 
               <app-product [data]="product" [setClass]="setClass" [imagesrc]="product.imageSrc[0]"></app-product>
    
@@ -155,4 +153,4 @@
 
   </div>
 </div>
-</div>
+</main>

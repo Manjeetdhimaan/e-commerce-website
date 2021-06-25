@@ -8,6 +8,7 @@ import { BannerComponent } from './banner/banner.component';
 import { InputSpinnerComponent } from './input-spinner/input-spinner.component';
 import { FormsModule } from '@angular/forms';
 import { PriceSliderComponent } from './price-slider/price-slider.component';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 
 
@@ -23,14 +24,16 @@ import { PriceSliderComponent } from './price-slider/price-slider.component';
   imports: [
     CommonModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    NgxSliderModule
   ],
   exports: [
   AccordionComponent,
   AccordionItemComponent,  
   ProductComponent,
   BannerComponent,
-  InputSpinnerComponent
+  InputSpinnerComponent,
+  PriceSliderComponent
   ]
 })
 export class UIComponentsModule { }

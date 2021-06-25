@@ -9,10 +9,10 @@ export class ProductDetailService {
   
     constructor() {
       this.data = localStorage.getItem('productDetail')
-      console.log(this.data)
+
       this.Json = JSON.parse(this.data);
       this.productdetail = this.Json
-      console.log(this.Json)
+     
     }
     getProductDetail() {
         localStorage.setItem('productDetail', JSON.stringify(this.productdetail))
