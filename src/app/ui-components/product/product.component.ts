@@ -22,7 +22,7 @@ export class ProductComponent implements OnInit {
   @Input() setClass: string = ''; 
   @Input() hidden:string ='hidden'
   @Input() imagesrc = "";
-
+  @Input() layout='grid'
   ngOnInit(): void {
     
   }
@@ -97,7 +97,7 @@ export class ProductComponent implements OnInit {
     return 'width:'+(reviewratingAvg*100)/5+'%'
   }
 
-  
+  /*function for changing source of image*/
   onChangeImgColor(imageNameObject: any) {
     this.imagesrc = imageNameObject;
   }

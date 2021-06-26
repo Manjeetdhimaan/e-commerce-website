@@ -25,6 +25,11 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ProductDetailService } from './product-detail/product-detail.service';
 import { TimeAgoPipe } from 'time-ago-pipe';
 import { ProductListingComponent } from './product-listing/product-listing.component';
+import { CurrencyPipe } from '@angular/common';
+import { ProductListGrid3Component } from './product-listing/product-list-grid3/product-list-grid3.component';
+import { ProductListToolboxComponent } from './product-listing/product-list-toolbox/product-list-toolbox.component';
+import { ProductListGrid4Component } from './product-listing/product-list-grid4/product-list-grid4.component';
+import { ProductListRowComponent } from './product-listing/product-list-row/product-list-row.component';
 
 @Pipe({
     name: 'timeAgo',
@@ -45,6 +50,10 @@ export class TimeAgoExtendsPipe extends TimeAgoPipe {}
     ProductDetailComponent,
     TimeAgoExtendsPipe,
     ProductListingComponent,
+    ProductListGrid3Component,
+    ProductListToolboxComponent,
+    ProductListGrid4Component,
+    ProductListRowComponent,
     
   ],
   imports: [
@@ -61,7 +70,7 @@ export class TimeAgoExtendsPipe extends TimeAgoPipe {}
     ClickOutsideModule,
     
   ],
-  providers: [ShoppingCartService,WishlistService,ProductDetailService],
+  providers: [ShoppingCartService,WishlistService,ProductDetailService, CurrencyPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

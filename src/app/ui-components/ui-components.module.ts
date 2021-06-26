@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AccordionComponent } from './accordion/accordion.component';
 import { AccordionItemComponent } from './accordion/accordion-item.component';
@@ -9,6 +9,7 @@ import { InputSpinnerComponent } from './input-spinner/input-spinner.component';
 import { FormsModule } from '@angular/forms';
 import { PriceSliderComponent } from './price-slider/price-slider.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { FiltersComponent } from './filters/filters.component';
 
 
 
@@ -19,7 +20,8 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
     ProductComponent,
     BannerComponent,
     InputSpinnerComponent,
-    PriceSliderComponent
+    PriceSliderComponent,
+    FiltersComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,9 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
   ProductComponent,
   BannerComponent,
   InputSpinnerComponent,
-  PriceSliderComponent
-  ]
+  PriceSliderComponent,
+  FiltersComponent
+  ],
+  providers: [CurrencyPipe]
 })
 export class UIComponentsModule { }

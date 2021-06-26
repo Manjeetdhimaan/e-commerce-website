@@ -1,26 +1,23 @@
-import { Options } from '@angular-slider/ngx-slider';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-product-listing',
-  templateUrl: './product-listing.component.html',
-  styleUrls: ['./product-listing.component.scss']
+  selector: 'app-product-list-grid4',
+  templateUrl: './product-list-grid4.component.html',
+  styleUrls: ['./product-list-grid4.component.scss']
 })
-export class ProductListingComponent implements OnInit {
+export class ProductListGrid4Component implements OnInit {
 
   constructor() { }
 
   ngOnInit(): void {
-
-   
   }
-
   setClass:string = 'product product-7 text-center'
   visible:string = "visible"
   
 
   
-  productList:any = [{
+  productListGrid4:any = [
+    {
     id:'ab1',
     category: 'Women',
     subCategory: 'Brown paperbag waist pencil skirt',
@@ -241,10 +238,221 @@ export class ProductListingComponent implements OnInit {
     }
   ],
     description:''
+  }, {
+    id:'ab6w',
+    category: 'Shoes',
+    subCategory: 'Light brown studded Wide fit wedges',
+    label: '',
+    price: '110.00',
+    oldPrice: '',
+    imageSrc: ['11'].map((n) => { return `assets/images/products/product-${n}.jpg`}),
+    colorChoiceImgSrc:['11', '11-2', '11-3'].map((n) => { return `assets/images/products/product-${n}-thumb.jpg`}),
+    quantity:'1',
+    stockStatus:'out of stock',
+    reviews_rating: [
+      {
+      reviewRatingStar:4,
+      reviewersName:"Kulveer Kaur",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
+    },
+      {
+      reviewRatingStar:5,
+      reviewersName:"Sukhjiner Singh",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
+    },
+      {
+      reviewRatingStar:3,
+      reviewersName:"Karan",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
+    }
+  ],
+    description:''
+  },
+  {
+    id:'ab6z',
+    category: 'Jumpers',
+    subCategory: 'Yellow button front tea top',
+    label: 'Top',
+    price: '56.00',
+    oldPrice: '',
+    imageSrc: ['10'].map((n) => { return `assets/images/products/product-${n}.jpg`}),
+    colorChoiceImgSrc:[].map((n) => { return `assets/images/products/product-${n}-thumb.jpg`}),
+    quantity:'1',
+    stockStatus:'',
+    reviews_rating: [
+      {
+      reviewRatingStar:4,
+      reviewersName:"Kulveer Kaur",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
+    },
+      {
+      reviewRatingStar:5,
+      reviewersName:"Sukhjiner Singh",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
+    },
+      {
+      reviewRatingStar:3,
+      reviewersName:"Karan",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
+    }
+  ],
+    description:''
+  },
+  {
+    id:'ab6f',
+    category: 'Bags',
+    subCategory: 'Black soft RI weekend travel',
+    label: 'New',
+    price: '68.00',
+    oldPrice: '',
+    imageSrc: ['12'].map((n) => { return `assets/images/products/product-${n}.jpg`}),
+    colorChoiceImgSrc:[].map((n) => { return `assets/images/products/product-${n}-thumb.jpg`}),
+    quantity:'1',
+    stockStatus:'',
+    reviews_rating: [
+      {
+      reviewRatingStar:4,
+      reviewersName:"Kulveer Kaur",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
+    },
+      {
+      reviewRatingStar:5,
+      reviewersName:"Sukhjiner Singh",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
+    },
+      {
+      reviewRatingStar:3,
+      reviewersName:"Karan",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
+    }
+  ],
+    description:''
+  },
+  {
+    id:'ab6fl',
+    category: 'Bags',
+    subCategory: 'Beige metal hoop tote bag',
+    label: 'Top',
+    price: '76.00',
+    oldPrice: '',
+    imageSrc: ['12'].map((n) => { return `assets/images/products/product-${n}.jpg`}),
+    colorChoiceImgSrc:['13', '13-2'].map((n) => { return `assets/images/products/product-${n}-thumb.jpg`}),
+    quantity:'1',
+    stockStatus:'',
+    reviews_rating: [
+      {
+      reviewRatingStar:4,
+      reviewersName:"Kulveer Kaur",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
+    },
+      {
+      reviewRatingStar:5,
+      reviewersName:"Sukhjiner Singh",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
+    },
+      {
+      reviewRatingStar:3,
+      reviewersName:"Karan",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
+    }
+  ],
+    description:''
+  },
+  {
+    id:'ab6fj',
+    category: 'Dresses',
+    subCategory: 'Brown zebra print dungaree dress',
+    label: 'New',
+    price: '80.00',
+    oldPrice: '',
+    imageSrc: ['14'].map((n) => { return `assets/images/products/product-${n}.jpg`}),
+    colorChoiceImgSrc:['14', '14-2'].map((n) => { return `assets/images/products/product-${n}-thumb.jpg`}),
+    quantity:'1',
+    stockStatus:'',
+    reviews_rating: [
+      {
+      reviewRatingStar:4,
+      reviewersName:"Kulveer Kaur",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
+    },
+      {
+      reviewRatingStar:5,
+      reviewersName:"Sukhjiner Singh",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
+    },
+      {
+      reviewRatingStar:3,
+      reviewersName:"Karan",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
+    }
+  ],
+    description:''
+  },
+  {
+    id:'ab6fs',
+    category: 'Bags',
+    subCategory: 'Beige ring handle circle cross body bag',
+    label: 'New',
+    price: '56.00',
+    oldPrice: '',
+    imageSrc: ['15'].map((n) => { return `assets/images/products/product-${n}.jpg`}),
+    colorChoiceImgSrc:[].map((n) => { return `assets/images/products/product-${n}-thumb.jpg`}),
+    quantity:'1',
+    stockStatus:'',
+    reviews_rating: [
+      {
+      reviewRatingStar:4,
+      reviewersName:"Kulveer Kaur",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
+    },
+      {
+      reviewRatingStar:5,
+      reviewersName:"Sukhjiner Singh",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
+    },
+      {
+      reviewRatingStar:3,
+      reviewersName:"Karan",
+      reviewlikes:0,
+      reviewdislikes:0,
+      time:0,
+    }
+  ],
+    description:''
   }
   ]
-
- 
-  
 }
-

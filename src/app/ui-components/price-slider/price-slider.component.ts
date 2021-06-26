@@ -1,5 +1,6 @@
 import { Options } from '@angular-slider/ngx-slider';
 import { Component, DoCheck, Input, OnInit, Output,EventEmitter } from '@angular/core';
+import {CurrencyPipe} from '@angular/common';
 
 @Component({
   selector: 'app-price-slider',
@@ -8,15 +9,17 @@ import { Component, DoCheck, Input, OnInit, Output,EventEmitter } from '@angular
 })
 export class PriceSliderComponent implements OnInit, DoCheck{
 
-  constructor() { }
+  constructor(private currency_pipe_object: CurrencyPipe) { }
   
   ngDoCheck(){
-  
+    
+   
   }
   ngOnInit(): void {
+    
   }
   @Input() minValue: number = 0;
-  @Input() maxValue:number = 750; 
+  @Input() maxValue:any = 750; 
 
   @Input() options: Options = {
     // floor: 0,
@@ -25,6 +28,11 @@ export class PriceSliderComponent implements OnInit, DoCheck{
     // showTicks: false
   };
 
+  getMaxValue(){
+    this.maxValue = this.currency_pipe_object.transform(this.maxValue, 'USD');
+    console.log(this.maxValue)
+    return this.maxValue
+  }
 
 
 }
