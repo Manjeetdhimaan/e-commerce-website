@@ -30,6 +30,8 @@ import { ProductListGrid3Component } from './product-listing/product-list-grid3/
 import { ProductListToolboxComponent } from './product-listing/product-list-toolbox/product-list-toolbox.component';
 import { ProductListGrid4Component } from './product-listing/product-list-grid4/product-list-grid4.component';
 import { ProductListRowComponent } from './product-listing/product-list-row/product-list-row.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ProductListingService } from './product-listing/product-listing.service';
 
 @Pipe({
     name: 'timeAgo',
@@ -54,7 +56,6 @@ export class TimeAgoExtendsPipe extends TimeAgoPipe {}
     ProductListToolboxComponent,
     ProductListGrid4Component,
     ProductListRowComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -68,9 +69,9 @@ export class TimeAgoExtendsPipe extends TimeAgoPipe {}
     ReactiveFormsModule,
     NgxNumberSpinnerModule,
     ClickOutsideModule,
-    
+    NgxPaginationModule
   ],
-  providers: [ShoppingCartService,WishlistService,ProductDetailService, CurrencyPipe],
+  providers: [ShoppingCartService,WishlistService,ProductDetailService, CurrencyPipe,ProductListingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

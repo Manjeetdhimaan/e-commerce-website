@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { PriceSliderComponent } from './price-slider/price-slider.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { FiltersComponent } from './filters/filters.component';
+import { PaginationComponent } from './pagination/pagination.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -21,13 +23,16 @@ import { FiltersComponent } from './filters/filters.component';
     BannerComponent,
     InputSpinnerComponent,
     PriceSliderComponent,
-    FiltersComponent
+    FiltersComponent,
+    PaginationComponent,
+    
   ],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
     FormsModule,
-    NgxSliderModule
+    NgxSliderModule,
+    NgxPaginationModule
   ],
   exports: [
   AccordionComponent,
@@ -36,7 +41,9 @@ import { FiltersComponent } from './filters/filters.component';
   BannerComponent,
   InputSpinnerComponent,
   PriceSliderComponent,
-  FiltersComponent
+  FiltersComponent,
+  PaginationComponent,
+  
   ],
   providers: [CurrencyPipe]
 })

@@ -25,10 +25,10 @@ export class AppComponent{
   this.scrollFunction();
 }
 
-scroll = true
+scroll = false
 // When the user scrolls down 20px from the top of the document, show the button
 scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 40) {
      this.scrolltop.nativeElement.style.display = "block";
      console.log(this.scrolltop.nativeElement)
      this.scroll= true
