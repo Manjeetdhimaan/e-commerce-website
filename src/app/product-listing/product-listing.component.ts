@@ -1,4 +1,4 @@
-import { Options } from '@angular-slider/ngx-slider';
+
 import { Component, OnInit } from '@angular/core';
 import { ProductListingService } from './product-listing.service';
 
@@ -9,7 +9,7 @@ import { ProductListingService } from './product-listing.service';
 })
 export class ProductListingComponent implements OnInit {
 
-  constructor(private productListService: ProductListingService) { }
+  constructor(private productListService: ProductListingService  ) { }
   productList: any[]
   ngOnInit(): void {
     this.productList = this.productListService.getProductList()

@@ -15,6 +15,7 @@
     "@angular/common": "~12.0.0",
     "@angular/compiler": "~12.0.0",
     "@angular/core": "~12.0.0",
+    "@angular/fire": "^6.1.5",
     "@angular/forms": "~12.0.0",
     "@angular/localize": "~12.0.0",
     "@angular/platform-browser": "~12.0.0",
@@ -26,11 +27,14 @@
     "angular-responsive-carousel": "^2.0.2",
     "bootstrap": "^4.3.1",
     "bootstrap-input-spinner": "^2.1.1",
+    "firebase": "^8.6.8",
+    "firebase-admin": "^9.10.0",
     "jquery": "^3.6.0",
     "ng-click-outside": "^8.0.0",
     "ngx-number-spinner": "^2.2.1",
     "ngx-owl-carousel-o": "^5.1.0",
     "ngx-pagination": "^5.1.1",
+    "node-sass": "^6.0.1",
     "rxjs": "~6.6.0",
     "time-ago-pipe": "^1.3.2",
     "tslib": "^2.1.0",
@@ -48,6 +52,25 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
-    "typescript": "~4.2.3"
-  }
+    "typescript": "~4.2.3",
+    "@angular-devkit/architect": ">= 0.900 < 0.1300",
+    "firebase-tools": "^8.0.0 || ^9.0.0",
+    "fuzzy": "^0.1.3",
+    "inquirer": "^6.2.2",
+    "inquirer-autocomplete-prompt": "^1.0.1",
+    "open": "^7.0.3"
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manjeetdhimaan/e-commerce-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Manjeetdhimaan/e-commerce-website/issues"
+  },
+  "homepage": "https://github.com/Manjeetdhimaan/e-commerce-website#readme"
 }

@@ -32,6 +32,9 @@ import { ProductListGrid4Component } from './product-listing/product-list-grid4/
 import { ProductListRowComponent } from './product-listing/product-list-row/product-list-row.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ProductListingService } from './product-listing/product-listing.service';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
 
 @Pipe({
     name: 'timeAgo',
@@ -69,9 +72,18 @@ export class TimeAgoExtendsPipe extends TimeAgoPipe {}
     ReactiveFormsModule,
     NgxNumberSpinnerModule,
     ClickOutsideModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
-  providers: [ShoppingCartService,WishlistService,ProductDetailService, CurrencyPipe,ProductListingService],
+  providers: [
+    ShoppingCartService,
+    WishlistService,
+    ProductDetailService, 
+    CurrencyPipe,
+    ProductListingService
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
