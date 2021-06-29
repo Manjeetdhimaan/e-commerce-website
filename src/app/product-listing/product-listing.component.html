@@ -25,7 +25,7 @@
                     
                     <div class="products mb-3">
                         <div class="row justify-content-center">
-                            <div class="col-6" *ngFor="let data of productList| paginate: { itemsPerPage: itemsPerPage, currentPage: p };let i = index">
+                            <div class="col-6" *ngFor="let data of productList| async | paginate: { itemsPerPage: itemsPerPage, currentPage: p };let i = index">
                                 <div class="product product-4">
                                     <app-product [data]="data" [setClass]="setClass" [hidden]="visible"
                                         [imagesrc]="data.imageSrc[0]"></app-product>

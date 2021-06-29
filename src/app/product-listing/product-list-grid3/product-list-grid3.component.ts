@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ProductListingService } from '../product-listing.service';
 
 @Component({
@@ -11,12 +12,12 @@ export class ProductListGrid3Component implements OnInit {
   responsive:boolean =true
   maxSize:number= 3
   constructor(private productListService: ProductListingService) { }
-
+  productListGrid3:Observable<any[]>
   ngOnInit(): void {
-    this.productListGrid3 = this.productListService.getProductList();
+    this.productListGrid3 = this.productListService.getProductsFirebase();
   }
   setClass:string = 'product product-7 text-center'
   visible:string = "visible"
-  productListGrid3:any = [ ]
+  
 
 }

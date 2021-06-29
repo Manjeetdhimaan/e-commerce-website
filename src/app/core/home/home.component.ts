@@ -8,7 +8,8 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  
+  constructor(){}
+  ngOnInit() { }
  setClass:string ='product product-4'
    
   /* properties of base home carousel starts*/
@@ -293,8 +294,7 @@ export class HomeComponent implements OnInit {
   imageSrc3: string = "../../../assets/images/demos/demo-12/banners/banner-3.jpg"
   bannerTitle3: string = "The Trend Story"
   /*end of third banner product*/
-  ngOnInit() {
-  }
+ 
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {

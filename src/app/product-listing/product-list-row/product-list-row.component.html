@@ -25,7 +25,7 @@
                     </app-product-list-toolbox><!-- End .toolbox -->
 
                     <div class="products mb-3">
-                        <div class="product product-list" *ngFor="let data of productListRow| paginate: { itemsPerPage: 6, currentPage: p }">
+                        <div class="product product-list" *ngFor="let data of productListRow | async | paginate: { itemsPerPage: 6, currentPage: p }">
                             <app-product [layout]="layout" [data]="data" [hidden]="visible"
                             [imagesrc]="data.imageSrc[0]"></app-product><!-- End .row -->
                         </div><!-- End .product -->

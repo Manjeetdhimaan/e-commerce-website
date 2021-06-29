@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ProductListingService } from '../product-listing.service';
 
 @Component({
@@ -9,9 +10,9 @@ import { ProductListingService } from '../product-listing.service';
 export class ProductListRowComponent implements OnInit {
 
   constructor(private productListService: ProductListingService) { }
-
+  productListRow:Observable<any[]>  
   ngOnInit(): void {
-    this.productListRow = this.productListService.getProductList();
+    this.productListRow =  this.productListService.getProductsFirebase();
   }
   p:any
   responsive:boolean =true
@@ -19,5 +20,5 @@ export class ProductListRowComponent implements OnInit {
   
   layout:string= "list"
   
-  productListRow:any = [ ]
+  
 }

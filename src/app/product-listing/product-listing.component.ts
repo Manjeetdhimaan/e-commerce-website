@@ -1,5 +1,6 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ProductListingService } from './product-listing.service';
 
 @Component({
@@ -7,12 +8,15 @@ import { ProductListingService } from './product-listing.service';
   templateUrl: './product-listing.component.html',
   styleUrls: ['./product-listing.component.scss']
 })
-export class ProductListingComponent implements OnInit {
+export class ProductListingComponent implements OnInit , OnDestroy{
 
   constructor(private productListService: ProductListingService  ) { }
-  productList: any[]
-  ngOnInit(): void {
-    this.productList = this.productListService.getProductList()
+  productList: Observable<any[]>
+ 
+  ngOnInit(){
+    // this.productList = this.productListService.getProductList();
+    this.productList =  this.productListService.getProductsFirebase();
+
   }
 
   setClass: string = 'product product-7 text-center'
@@ -21,5 +25,9 @@ export class ProductListingComponent implements OnInit {
   p: number
   responsive: boolean = true
   itemsPerPage:number = 6
+
+  ngOnDestroy(){
+
+  }
 }
 
