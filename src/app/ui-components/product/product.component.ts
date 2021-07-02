@@ -4,6 +4,7 @@ import { ShoppingCartService } from 'src/app/shopping-cart/shopping-cart.service
 import { WishlistService } from 'src/app/wishlist/wishlist.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Width } from 'ngx-owl-carousel-o/lib/services/carousel.service';
+import { ProductListingService } from 'src/app/product-listing/product-listing.service';
 
 @Component({
   selector: 'app-product',
@@ -15,16 +16,22 @@ export class ProductComponent implements OnInit {
     private wishlistService: WishlistService,
     private productDetailService: ProductDetailService,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private productLS : ProductListingService) { }
 
   @Input() category: string = '';
   @Input() subCategory: string = '';
   @Input() setClass: string = ''; 
   @Input() hidden:string ='hidden'
   @Input() imagesrc = "";
-  @Input() layout='grid'
-  ngOnInit(): void {
-    
+  @Input() layout='grid';
+
+  cart = {}
+  ngOnInit() {
+    this.shoppingCartServive.cart.subscribe(value =>{
+      console.log('my cart ' , value);
+      this.cart = value;
+    })
   }
   @Input() data: any = {};
 
@@ -73,10 +80,12 @@ export class ProductComponent implements OnInit {
     return (label == this.labelMapping[label]) ? true : false
   }
 
-  onAddtoCart(item: any) {
-    this.shoppingCartServive.onaddItemToCart(item)
+  onAddtoCart( product:any) {
+  //  event.stopPropogation();
+   this.shoppingCartServive.onaddItemToCart(product.id)
+    // this.shoppingCartServive.onaddItemToCart(item)
 
-  }
+  }   
   onAddItemToWishList(item: any) {
     this.wishlistService.onAddItemToWishList(item)
 

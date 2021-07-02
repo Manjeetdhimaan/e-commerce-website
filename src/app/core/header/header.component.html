@@ -354,7 +354,7 @@
                         <img [src]="list.imageSrc[0]" alt="product">
                     </a>
                 </figure>
-                <a class="btn-remove" title="Remove Product" (click)="deleteListItem(i)">
+                <a class="btn-remove" title="Remove Product" (click)="deleteListItem(list.id, i)">
                     <i class="icon-close"></i></a>
             </div><!-- End .product -->
         <div  class="dropdown-cart-total">

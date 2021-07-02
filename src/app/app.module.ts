@@ -35,7 +35,7 @@ import { ProductListingService } from './product-listing/product-listing.service
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
-
+import * as _angular_ from "angular";
 @Pipe({
     name: 'timeAgo',
     pure: false

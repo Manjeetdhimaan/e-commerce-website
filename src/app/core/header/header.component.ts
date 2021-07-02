@@ -19,22 +19,23 @@ export class HeaderComponent implements OnInit {
   hover = false
   @Output() mobileMenuClose = new EventEmitter();
 
-  cartList: ShoppingCart[] = []
+  cartList = []
   
   wishList: any[]=[]
 
   ngOnInit() {
-    this.cartList = this.shoppingCartService.getCartItem();
+    // this.shoppingCartService.getCartProduct()
+    this.cartList = this.shoppingCartService.getCartItem()
+    this.shoppingCartService.getCartProduct()
     this.wishList = this.wishlistservice.getWishListItem()
   }
 
   ngDoCheck() {
-    this.cartList = this.shoppingCartService.getCartItem();
+    this.cartList = this.shoppingCartService.getCartItem()
     this.wishList = this.wishlistservice.getWishListItem()
   }
 
   
-
   mobileMenuToggle() {
     this.toggleMobileMenu = !this.toggleMobileMenu
     this.mobileMenuClose.emit(null);
@@ -60,10 +61,9 @@ export class HeaderComponent implements OnInit {
   /*shopping cart method & properties starts*/
   
    
-  deleteListItem(index: number) {
-    this.shoppingCartService.deleteListItem(index)
-    this.cartList = this.shoppingCartService.getCartItem();
-
+  deleteListItem(id :any,index:any) {
+    this.cartList.splice(index, 1)
+    this.shoppingCartService.deleteListItem(id)
   }
 
   subTotal() {

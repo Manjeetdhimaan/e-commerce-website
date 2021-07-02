@@ -13,6 +13,15 @@ export class ProductListingService {
    getProductsFirebase(){
     return this.productsCollection.valueChanges({idField:'id'});
   }
+
+  onInputSpinnerChange(value: any, item: any) {
+    debugger
+    item.quantity = value
+  this.afs.collection('products-list').doc().update({
+    [item.quantity]:value
+  })
+
+  }
    
   productList: any = [
     {

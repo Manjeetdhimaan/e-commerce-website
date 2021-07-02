@@ -1,11 +1,12 @@
 
 
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { ShoppingCart } from './shopping-cart.model'
 import firebase from 'firebase/app'
 import { Storage } from "@capacitor/storage"
 import { BehaviorSubject } from 'rxjs';
+import { ProductListingService } from '../product-listing/product-listing.service';
 const CART_STORAGE_KEY = 'MY_CART'
 // const { Storage } = Plugins;
 
@@ -14,25 +15,16 @@ const DECREMENT = firebase.firestore.FieldValue.increment(-1);
 @Injectable()
 export class ShoppingCartService {
   cart = new BehaviorSubject({})
-  private cartList: ShoppingCart[] = []
-  public data: any;
-  public Json: any;
-  public userToken: any;
+   cartList = []
 
 
-  cartListCollection: AngularFirestoreCollection;
-
-  constructor(private afs: AngularFirestore) {
-    this.data = localStorage.getItem('cartData')
-    this.Json = JSON.parse(this.data);
-    this.cartList = this.Json
-    this.cartListCollection = this.afs.collection('cart-list');
+  
+  constructor(private afs: AngularFirestore , private productListService:ProductListingService ) {
+    
+    this.loadCart();
+    this.getCartProduct()
   }
 
-
-  getCartListFirebase() {
-    return this.cartListCollection.valueChanges({ idField: 'id' });
-  }
   getCartItem() {
     return this.cartList.slice();
   }
@@ -41,17 +33,17 @@ export class ShoppingCartService {
   cartKey = null
 
   async loadCart() {
-    const result = await Storage.get({ key: CART_STORAGE_KEY })
-    console.log('Cart From Storage ', result)
+    const result = await Storage.get({ key: CART_STORAGE_KEY });
+    console.log('Cart From Storage ', result);
     if (result.value) {
       this.cartKey = result.value;
       this.afs.collection('cart-list').doc(this.cartKey).valueChanges().subscribe((result: any) => {
-        delete result['lastUpdate']
+        delete result['lastUpdate'];
         console.log('cart changed ', result);
-
         this.cart.next(result || {});
       })
     }
+
     else {
       const fbDocument = await this.afs.collection('cart-list').add({
         lastUpdate: firebase.firestore.FieldValue.serverTimestamp()
@@ -62,30 +54,37 @@ export class ShoppingCartService {
     }
   }
 
-  deleteListItem(index: any) {
-    this.cartList.splice(index, 1)
-    localStorage.setItem('cartData', JSON.stringify(this.cartList))
 
-
-    // this.afs.collection('cart-list').doc(this.cartKey).update({
-    //   [id]:INCREMENT
-    //    })
+  deleteListItem(id: any) {
+    this.afs.collection('cart-list').doc(this.cartKey).update({
+      [id]: firebase.firestore.FieldValue.delete(),
+      lastUpdate: firebase.firestore.FieldValue.serverTimestamp()
+    });
   }
 
-  onaddItemToCart(item: any) {
-    if (this.cartList.some(obj => obj.id === item.id)) {
-      this.cartList.push()
-    }
-    else {
-      this.cartList.push(item)
-    }
-    localStorage.setItem('cartData', JSON.stringify(this.cartList))
-
-
-    //   this.afs.collection('cart-list').doc(this.cartKey).update({
-    //  [id]:INCREMENT
-    //   })
-
+  onaddItemToCart(id: any) {
+    this.afs.collection('cart-list').doc(this.cartKey).update({
+      [id]: id,
+      lastUpdate: firebase.firestore.FieldValue.serverTimestamp()
+    });
   }
 
+
+  onInputSpinnerChange(value: any, item: any) {
+    item.quantity = value
+  }
+
+   getCartProduct(){
+     debugger
+    this.productListService.getProductsFirebase()
+    .subscribe((allProducts: any[]) => {
+      this.cartList = allProducts.filter(p => {
+        if (this.cart.value[p.id]) {
+          return p
+        }
+      });
+      console.log('product ', this.cartList)
+    })
+
+   }
 }

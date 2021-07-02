@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { Subject } from 'rxjs';
+import { ShoppingCartService } from 'src/app/shopping-cart/shopping-cart.service';
 
 @Component({
   selector: 'app-input-spinner',
@@ -65,7 +66,7 @@ counter:number=1
     this.change.emit(this.value);
   }
 
-  
+
 }
 
 
