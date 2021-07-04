@@ -59,16 +59,21 @@ export class ShoppingCartService {
   deleteListItem(id: any , index:any) {
     this.cartList.splice(index,1)
     this.afs.collection('cart-list').doc(this.cartKey).update({
-      [id]: firebase.firestore.FieldValue.delete(),
+      id: firebase.firestore.FieldValue.delete(),
       lastUpdate: firebase.firestore.FieldValue.serverTimestamp()
     });
-   
+
+    
+
+
+
+    
   
   }
 
   onaddItemToCart(id: any) {
     this.afs.collection('cart-list').doc(this.cartKey).update({
-      [id]: id,
+       id: id,
       lastUpdate: firebase.firestore.FieldValue.serverTimestamp()
     });
     this.getCartProductFromFirebase();
