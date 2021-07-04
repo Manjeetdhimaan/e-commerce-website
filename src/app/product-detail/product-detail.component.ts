@@ -31,12 +31,12 @@ export class ProductDetailComponent implements OnInit {
 
    
   onAddItemToCart(item: any) {
-   this.shoppingCartService.onaddItemToCart(item)  
+   this.shoppingCartService.onaddItemToCart(item.id)  
   }
 
    
   onAddItemToWishlsit(item: any) {
-    this.wishListService.onAddItemToWishList(item)
+    this.wishListService.onAddItemToWishList(item.id)
   }
   onInputSpinnerChange(value: any, item: any) {
     item.quantity = value

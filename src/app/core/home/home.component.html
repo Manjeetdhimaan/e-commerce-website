@@ -2,7 +2,7 @@
 
   <ngb-carousel [showNavigationIndicators]="showNavigationIndicators" [showNavigationArrows]="showNavigationArrows"
     [wrap]="false">
-    <ng-template ngbSlide *ngFor="let img of images; index as i">
+    <ng-template ngbSlide *ngFor="let img of images ; index as i">
       <div class="intro-slider-container mb-3 mb-lg-5">
         <div class="picsum-img-wrapper">
           <!-- <img [src]="img" alt="My image {{i + 1}} description"> -->
@@ -48,9 +48,9 @@
           <ng-template carouselSlide>
             
             <div class="owl-item active" style="width: 255px; margin-right: 10px;">
-
-              <app-product [data]="product" [setClass]="setClass" [imagesrc]="product.imageSrc[0]"></app-product>
-   
+              <div class="product product-4">
+              <app-product [data]="product" [setClass]="setClass" [imagesrc]="product.imageSrc[0]" [changeImgSrc]='changeImgSrc' [showColor]='color'></app-product>
+   </div>
           </div>
           </ng-template>
         </ng-container>

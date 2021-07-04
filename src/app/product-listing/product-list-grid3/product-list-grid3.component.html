@@ -27,7 +27,7 @@
                         <div class="row justify-content-center">
                             <div class="col-6 col-md-4 col-lg-4" *ngFor="let data of productListGrid3 | async | paginate: { itemsPerPage: 6, currentPage: p }">
                                 <div class="product product-4">
-                                <app-product [data]="data" [setClass]="setClass" [hidden]="visible"
+                                <app-product [data]="data" [setClass]="setClass" [visibilityOfRatings]="visible"
                                 [imagesrc]="data.imageSrc[0]"></app-product><!-- End .product -->
                             </div>
                         </div><!-- End .col-sm-6 col-lg-4 -->

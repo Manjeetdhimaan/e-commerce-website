@@ -36,6 +36,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import * as _angular_ from "angular";
+import { ProductService } from './ui-components/product/product.service';
 @Pipe({
     name: 'timeAgo',
     pure: false
@@ -81,7 +82,8 @@ export class TimeAgoExtendsPipe extends TimeAgoPipe {}
     WishlistService,
     ProductDetailService, 
     CurrencyPipe,
-    ProductListingService
+    ProductListingService,
+    ProductService
   ],
 
   bootstrap: [AppComponent]

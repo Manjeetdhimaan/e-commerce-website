@@ -33,14 +33,14 @@
            <span *ngIf="getLabel(data.label)" class="old-price">Was {{ data.oldPrice | currency}}</span>
         </div><!-- End .product-price -->
        
-        <div class="product-nav product-nav-dots" *ngIf="data.color" >
+        <div class="product-nav product-nav-dots" *ngIf="data.color && showColor" >
             <a *ngFor="let color of data.color;let index=index" class="" [style]='getColor(data,index)'>
                 <span class="sr-only">Color name:   </span>
                
             </a>
           
         </div><!-- End .product-nav -->
-        <div class="ratings-container" style="margin-bottom: 1rem;" [ngStyle]="{'visibility': hidden}">
+        <div class="ratings-container" style="margin-bottom: 1rem;" [ngStyle]="{'visibility': visibilityOfRatings}">
             <div class="ratings" >
                 <div class="ratings-val" 
                 [style]="getAverageRating(data.reviews_rating)">
@@ -48,7 +48,7 @@
             </div><!-- End .ratings -->
             <a class="ratings-text">( {{data.reviews_rating.length}} Reviews )</a>
         </div>
-        <div class="product-nav product-nav-thumbs">
+        <div class="product-nav product-nav-thumbs" *ngIf='changeImgSrc'>
             <a  class="active" *ngFor="let imgSrc of data.colorChoiceImgSrc" >
                 <img  [src]="imgSrc" alt="product desc" (click)="onChangeImgColor(imgSrc)">
             </a>
@@ -83,7 +83,7 @@
                         <span *ngIf="getLabel(data.label)" class="new-price">Now {{ data.price | currency}}</span>
                         <span *ngIf="getLabel(data.label)" class="old-price">Was {{ data.oldPrice | currency}}</span>
                      </div><!-- End .product-price -->
-                     <div class="ratings-container" style="margin-bottom: 1rem;" [ngStyle]="{'visibility': hidden}">
+                     <div class="ratings-container" style="margin-bottom: 1rem;" [ngStyle]="{'visibility': visibilityOfRatings}">
                         <div class="ratings" >
                             <div class="ratings-val" 
                             [style]="getAverageRating(data.reviews_rating)">

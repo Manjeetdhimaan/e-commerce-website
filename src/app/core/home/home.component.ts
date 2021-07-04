@@ -1,6 +1,8 @@
 
 import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Observable } from 'rxjs';
+import { ProductService } from 'src/app/ui-components/product/product.service';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +10,242 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor(){}
-  ngOnInit() { }
+  constructor(private productService:ProductService){}
+  products:any[] = [{
+    "category": "clothing",
+    "subCategory": "Linen-blend dress",
+    "label": "",
+    "price": "60.00",
+    "oldPrice": "",
+    "imageSrc": [
+      "../../../../assets/images/demos/demo-12/products/product-1.jpg",
+      "../../../../assets/images/demos/demo-12/products/product-1-2.jpg"
+    ],
+    "color": [
+      "#e5dcb1;",
+      "#bacbd8;"
+    ],
+    "quantity": "1",
+    "stockStatus": "Out of stock",
+    "reviews_rating": [
+      {
+        "reviewRatingStar": 4,
+        "reviewersName": "Nirmal",
+        "reviewlikes": 0,
+        "reviewdislikes": 0,
+        "time": 1625207937739
+      },
+      {
+        "reviewRatingStar": 5,
+        "reviewersName": "Navjeet Singh",
+        "reviewlikes": 0,
+        "reviewdislikes": 0,
+        "time": 1625207937739
+      }
+    ],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus cum\n    dolores assumenda asperiores facilis porro reprehenderit animi culpa\n    atque blanditiis commodi perspiciatis doloremque, possimus, explicabo,\n    autem fugit beatae quae voluptas!"
+  },
+  {
+    "category": "shoes",
+    "subCategory": "Sandlas with lacing",
+    "label": "Top",
+    "price": "70.00",
+    "oldPrice": "90.00",
+    "imageSrc": [
+      "../../../../assets/images/demos/demo-12/products/product-2.jpg",
+      "../../../../assets/images/demos/demo-12/products/product-2-2.jpg"
+    ],
+    "color": [],
+    "quantity": "1",
+    "stockStatus": "in stock",
+    "reviews_rating": [
+      {
+        "reviewRatingStar": 4,
+        "reviewersName": "Karan",
+        "reviewlikes": 0,
+        "reviewdislikes": 0,
+        "time": 1625207937739
+      },
+      {
+        "reviewRatingStar": 3,
+        "reviewersName": "Ekam",
+        "reviewlikes": 0,
+        "reviewdislikes": 0,
+        "time": 1625207937739
+      },
+      {
+        "reviewRatingStar": 5,
+        "reviewersName": "Aman",
+        "reviewlikes": 0,
+        "reviewdislikes": 0,
+        "time": 1625207937739
+      }
+    ],
+    "description": ""
+  },
+  {
+    "category": "clothing",
+    "subCategory": "Paper bag trousers",
+    "label": "",
+    "price": "60.00",
+    "oldPrice": "",
+    "imageSrc": [
+      "../../../../assets/images/demos/demo-12/products/product-3.jpg",
+      "../../../../assets/images/demos/demo-12/products/product-3-2.jpg"
+    ],
+    "color": [
+      "#9fac76;",
+      "#333333;"
+    ],
+    "quantity": "1",
+    "stockStatus": "in stock",
+    "reviews_rating": [
+      {
+        "reviewRatingStar": 3,
+        "reviewersName": "Davinder",
+        "reviewlikes": 0,
+        "reviewdislikes": 0,
+        "time": 1625207937739
+      },
+      {
+        "reviewRatingStar": 2,
+        "reviewersName": "Mehak",
+        "reviewlikes": 0,
+        "reviewdislikes": 0,
+        "time": 1625207937739
+      },
+      {
+        "reviewRatingStar": 3,
+        "reviewersName": "Fateh",
+        "reviewlikes": 0,
+        "reviewdislikes": 0,
+        "time": 1625207937739
+      }
+    ],
+    "description": ""
+  },
+  {
+    "category": "handbags",
+    "subCategory": "Bucket bag",
+    "label": "",
+    "price": "350.00",
+    "oldPrice": "",
+    "imageSrc": [
+      "../../../../assets/images/demos/demo-12/products/product-4.jpg",
+      "../../../../assets/images/demos/demo-12/products/product-4-2.jpg"
+    ],
+    "color": [],
+    "quantity": "1",
+    "stockStatus": "in stock",
+    "reviews_rating": [
+      {
+        "reviewRatingStar": 2,
+        "reviewersName": "Navjeet Singh",
+        "reviewlikes": 0,
+        "reviewdislikes": 0,
+        "time": 1625207937739
+      },
+      {
+        "reviewRatingStar": 2,
+        "reviewersName": "Rajveer Kaur",
+        "reviewlikes": 0,
+        "reviewdislikes": 0,
+        "time": 1625207937739
+      },
+      {
+        "reviewRatingStar": 3,
+        "reviewersName": "Inderjeet Singh",
+        "reviewlikes": 0,
+        "reviewdislikes": 0,
+        "time": 1625207937739
+      }
+    ],
+    "description": ""
+  },
+  {
+    "category": "clothing",
+    "subCategory": "Silk-blended kaftan",
+    "label": "new",
+    "price": "370.00",
+    "oldPrice": "",
+    "imageSrc": [
+      "../../../../assets/images/demos/demo-12/products/product-5.jpg",
+      "../../../../assets/images/demos/demo-12/products/product-5-2.jpg"
+    ],
+    "color": [],
+    "quantity": "1",
+    "stockStatus": "in stock",
+    "reviews_rating": [
+      {
+        "reviewRatingStar": 4,
+        "reviewersName": "Harsimran",
+        "reviewlikes": 0,
+        "reviewdislikes": 0,
+        "time": 0
+      },
+      {
+        "reviewRatingStar": 4,
+        "reviewersName": "Sukhraas",
+        "reviewlikes": 0,
+        "reviewdislikes": 0,
+        "time": 0
+      },
+      {
+        "reviewRatingStar": 3,
+        "reviewersName": "Prabhgeet",
+        "reviewlikes": 0,
+        "reviewdislikes": 0,
+        "time": 0
+      }
+    ],
+    "description": ""
+  },
+  {
+    "category": "Sandles",
+    "subCategory": "Spring sandlas",
+    "label": "",
+    "price": "59.00",
+    "oldPrice": "",
+    "imageSrc": [
+      "../../../../assets/images/demos/demo-12/products/product-6.jpg",
+      "../../../../assets/images/demos/demo-12/products/product-6-2.jpg"
+    ],
+    "color": [],
+    "quantity": "1",
+    "stockStatus": "out of stock",
+    "reviews_rating": [
+      {
+        "reviewRatingStar": 4,
+        "reviewersName": "Kulveer Kaur",
+        "reviewlikes": 0,
+        "reviewdislikes": 0,
+        "time": 0
+      },
+      {
+        "reviewRatingStar": 5,
+        "reviewersName": "Sukhjiner Singh",
+        "reviewlikes": 0,
+        "reviewdislikes": 0,
+        "time": 0
+      },
+      {
+        "reviewRatingStar": 3,
+        "reviewersName": "Karan",
+        "reviewlikes": 0,
+        "reviewdislikes": 0,
+        "time": 0
+      }
+    ],
+    "description": ""
+  }
+]
+  ngOnInit() {
+    // this.productService.getProductsFirebase().subscribe(value => {
+    //   this.products = value.slice(0,5)
+    // })
+   }
+ color= true
+ changeImgSrc = false
  setClass:string ='product product-4'
    
   /* properties of base home carousel starts*/
@@ -55,223 +291,7 @@ export class HomeComponent implements OnInit {
   carouselHeight = 480;
   cellsToShow = 4;
   
-  products:any = [{
-    id:'a1',
-    category: 'clothing',
-    subCategory: 'Linen-blend dress',
-    label: '',
-    price: '60.00',
-    oldPrice: '',
-    imageSrc: ['1', '1-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
-    color: ["#e5dcb1;", "#bacbd8;"],
-    quantity:'1',
-    stockStatus:'Out of stock',
-    reviews_rating: [
-      {
-      reviewRatingStar:4,
-      reviewersName:"Nirmal",
-      reviewlikes:0,
-      reviewdislikes:0,
-      time: new Date().getTime()
-    },
-      {
-      reviewRatingStar:5,
-      reviewersName:"Navjeet Singh",
-      reviewlikes:0,
-      reviewdislikes:0,
-      time: new Date().getTime()
-    }
-  ],
-    description:`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus cum
-    dolores assumenda asperiores facilis porro reprehenderit animi culpa
-    atque blanditiis commodi perspiciatis doloremque, possimus, explicabo,
-    autem fugit beatae quae voluptas!`
-  },
-  {
-    id:'a2',
-    category: 'shoes',
-    subCategory: 'Sandlas with lacing',
-    label: 'Top',
-    price: '70.00',
-    oldPrice: '90.00',
-    imageSrc: ['2', '2-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
-    color: [],
-    quantity:'1',
-    stockStatus:'in stock',
-    reviews_rating: [
-      {
-      reviewRatingStar:4,
-      reviewersName:"Karan",
-      reviewlikes:0,
-      reviewdislikes:0,
-      time:new Date().getTime()
-    },
-      {
-      reviewRatingStar:3,
-      reviewersName:"Ekam",
-      reviewlikes:0,
-      reviewdislikes:0,
-      time:new Date().getTime()
-    },
-      {
-      reviewRatingStar:5,
-      reviewersName:"Aman",
-      reviewlikes:0,
-      reviewdislikes:0,
-      time:new Date().getTime()
-    }
-  ],
-    description:''
-  },
-  {
-    id:'a3',
-    category: 'clothing',
-    subCategory: 'Paper bag trousers',
-    label: '',
-    price: '60.00',
-    oldPrice: '',
-    imageSrc: ['3', '3-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
-    color: ["#9fac76;", "#333333;"],
-    quantity:'1',
-    stockStatus:'in stock',
-    reviews_rating:  [
-      {
-      reviewRatingStar:3,
-      reviewersName:"Davinder",
-      reviewlikes:0,
-      reviewdislikes:0,
-      time:new Date().getTime()
-    },
-      {
-      reviewRatingStar:2,
-      reviewersName:"Mehak",
-      reviewlikes:0,
-      reviewdislikes:0,
-      time:new Date().getTime()
-    },
-      {
-      reviewRatingStar:3,
-      reviewersName:"Fateh",
-      reviewlikes:0,
-      reviewdislikes:0,
-      time:new Date().getTime()
-    }
-  ],
-    description:''
-
-  },
-
-
-  {
-
-    id:'a4',
-    category: 'handbags',
-    subCategory: 'Bucket bag',
-    label: '',
-    price: '350.00',
-    oldPrice: '',
-    imageSrc: ['4', '4-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
-    color: [],
-    quantity:'1',
-    stockStatus:'in stock',
-    reviews_rating: [
-      {
-      reviewRatingStar:2,
-      reviewersName:"Navjeet Singh",
-      reviewlikes:0,
-      reviewdislikes:0,
-      time:new Date().getTime()
-    },
-      {
-      reviewRatingStar:2,
-      reviewersName:"Rajveer Kaur",
-      reviewlikes:0,
-      reviewdislikes:0,
-      time:new Date().getTime()
-    },
-      {
-      reviewRatingStar:3,
-      reviewersName:"Inderjeet Singh",
-      reviewlikes:0,
-      reviewdislikes:0,
-      time:new Date().getTime()
-    }
-  ],
-    description:''
-  },
-  {
-    id:'a5',
-    category: 'clothing',
-    subCategory: 'Silk-blended kaftan',
-    label: 'new',
-    price: '370.00',
-    oldPrice: '',
-    imageSrc: ['5', '5-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
-    color: [],
-    quantity:'1',
-    stockStatus:'in stock',
-    reviews_rating: [
-      {
-      reviewRatingStar:4,
-      reviewersName:"Harsimran",
-      reviewlikes:0,
-      reviewdislikes:0,
-      time:0,
-    },
-      {
-      reviewRatingStar:4,
-      reviewersName:"Sukhraas",
-      reviewlikes:0,
-      reviewdislikes:0,
-      time:0,
-    },
-      {
-      reviewRatingStar:3,
-      reviewersName:"Prabhgeet",
-      reviewlikes:0,
-      reviewdislikes:0,
-      time:0,
-    }
-  ],
-    description:''
-  },
-  {
-    id:'a6',
-    category: 'Sandles',
-    subCategory: 'Spring sandlas',
-    label: '',
-    price: '59.00',
-    oldPrice: '',
-    imageSrc: ['6', '6-2'].map((n) => { return `../../../../assets/images/demos/demo-12/products/product-${n}.jpg` }),
-    color: [],
-    quantity:'1',
-    stockStatus:'out of stock',
-    reviews_rating: [
-      {
-      reviewRatingStar:4,
-      reviewersName:"Kulveer Kaur",
-      reviewlikes:0,
-      reviewdislikes:0,
-      time:0,
-    },
-      {
-      reviewRatingStar:5,
-      reviewersName:"Sukhjiner Singh",
-      reviewlikes:0,
-      reviewdislikes:0,
-      time:0,
-    },
-      {
-      reviewRatingStar:3,
-      reviewersName:"Karan",
-      reviewlikes:0,
-      reviewdislikes:0,
-      time:0,
-    }
-  ],
-    description:''
-  }
-  ]
+  
   /*properties carousel component end */
 
 

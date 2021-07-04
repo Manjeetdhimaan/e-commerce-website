@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ProductListingService } from '../product-listing.service';
 
 @Component({
@@ -7,10 +8,10 @@ import { ProductListingService } from '../product-listing.service';
   styleUrls: ['./product-list-toolbox.component.scss']
 })
 export class ProductListToolboxComponent implements OnInit {
-   productList:any[]
+   productList:Observable<any[]>
   constructor(private productListService: ProductListingService) { }
   ngOnInit(): void {
-   this.productList =  this.productListService.getProductList();
+   this.productList =  this.productListService.getProductsFirebase();
   }
 
 }

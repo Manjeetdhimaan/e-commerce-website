@@ -1,4 +1,4 @@
-import { Component,  ElementRef, EventEmitter, HostListener, OnInit, Output, ViewChild } from '@angular/core';
+import { Component,  ElementRef, EventEmitter, HostListener, OnChanges, OnInit, Output, ViewChild } from '@angular/core';
 import { ShoppingCart } from 'src/app/shopping-cart/shopping-cart.model';
 import { ShoppingCartService } from 'src/app/shopping-cart/shopping-cart.service';
 import { WishlistService } from 'src/app/wishlist/wishlist.service';
@@ -8,7 +8,7 @@ import { WishlistService } from 'src/app/wishlist/wishlist.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit , OnChanges {
   constructor(private shoppingCartService: ShoppingCartService, private wishlistservice:WishlistService) { }
 
   
@@ -25,19 +25,20 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     // this.shoppingCartService.getCartProduct()
-    this.cartList = this.shoppingCartService.getCartItem()
-    this.shoppingCartService.getCartProduct()
-    this.wishList = this.wishlistservice.getWishListItem()
+    this.cartList = this.shoppingCartService.getCartItem();
+    this.wishList = this.wishlistservice.getWishListItem();
   }
+ngOnChanges(){
+}
 
   ngDoCheck() {
-    this.cartList = this.shoppingCartService.getCartItem()
-    this.wishList = this.wishlistservice.getWishListItem()
+    this.cartList = this.shoppingCartService.getCartItem();
+    this.wishList = this.wishlistservice.getWishListItem();
   }
 
   
   mobileMenuToggle() {
-    this.toggleMobileMenu = !this.toggleMobileMenu
+    this.toggleMobileMenu = !this.toggleMobileMenu;
     this.mobileMenuClose.emit(null);
   }
 
@@ -62,8 +63,8 @@ export class HeaderComponent implements OnInit {
   
    
   deleteListItem(id :any,index:any) {
-    this.cartList.splice(index, 1)
-    this.shoppingCartService.deleteListItem(id)
+    this.shoppingCartService.deleteListItem(id, index);
+    this.cartList = this.shoppingCartService.getCartItem();
   }
 
   subTotal() {

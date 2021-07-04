@@ -1,19 +1,21 @@
-import { Component, OnInit, DoCheck, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, DoCheck, ViewChild, ElementRef, OnChanges } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductListingService } from '../product-listing/product-listing.service';
 import { ShoppingCartService } from './shopping-cart.service';
-import firebase from 'firebase/app'
+const CART_STORAGE_KEY = 'MY_CART'
 @Component({
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',
   styleUrls: ['./shopping-cart.component.scss']
 })
-export class ShoppingCartComponent implements OnInit, DoCheck {
+export class ShoppingCartComponent implements OnInit, DoCheck , OnChanges {
   constructor(private shoppingCartService: ShoppingCartService,
     private formBuilder: FormBuilder,
     private productListService: ProductListingService,
-    private afs: AngularFirestore) { }
+    private afs: AngularFirestore) {
+     
+     }
 
   freeShipping = '0.00'
   Standart = '10.00'
@@ -26,28 +28,18 @@ export class ShoppingCartComponent implements OnInit, DoCheck {
   cartList = []
   cartItems = this.shoppingCartService.cart.value;
   ngDoCheck() {
-    this.cartList = this.shoppingCartService.getCartItem()
+    this.cartList = this.shoppingCartService.getCartItem();
    }
-
+ngOnChanges(){
+}
   ngOnInit() {
+  
     this.shippingForm = this.formBuilder.group({
       shippingCost: [this.freeShipping, [Validators.required]]
     });
-    this.cartList = this.shoppingCartService.getCartItem()
-    
-    /*---properties for getting cartlist from firebase--*/
-    console.log('cart ', this.cartList);
-
-    // this.productListService.getProductsFirebase()
-    //   .subscribe((allProducts: any[]) => {
-    //     this.cartList = allProducts.filter(p => {
-    //       if (this.cartItems[p.id]) {
-    //         return p
-    //       }
-    //     });
-    //     console.log('product ', this.cartList)
-    //   })
-
+    this.shoppingCartService.getCartProductFromFirebase();
+    this.cartList = this.shoppingCartService.cartList;
+   
   }
 
 
@@ -57,8 +49,8 @@ export class ShoppingCartComponent implements OnInit, DoCheck {
   }
 
   deleteListItem(id: any, index: any) {
-    this.cartList.splice(index, 1)
-    this.shoppingCartService.deleteListItem(id)
+    this.shoppingCartService.deleteListItem(id, index);
+    this.cartList = this.shoppingCartService.getCartItem();
   }
 
   onInputSpinnerChange(value: any, item: any) {
@@ -75,6 +67,5 @@ export class ShoppingCartComponent implements OnInit, DoCheck {
   onUpdate() {
     this.cartList = this.shoppingCartService.getCartItem()
   }
-
 
 }

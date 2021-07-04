@@ -22,11 +22,12 @@
                     <!-- Start .toolbox -->
                     <app-product-list-toolbox>
 
-                    </app-product-list-toolbox><!-- End .toolbox -->
+                    </app-product-list-toolbox>
+                    <!-- End .toolbox -->
 
                     <div class="products mb-3">
                         <div class="product product-list" *ngFor="let data of productListRow | async | paginate: { itemsPerPage: 6, currentPage: p }">
-                            <app-product [layout]="layout" [data]="data" [hidden]="visible"
+                            <app-product [layout]="layout" [data]="data" [visibilityOfRatings]="visible"
                             [imagesrc]="data.imageSrc[0]"></app-product><!-- End .row -->
                         </div><!-- End .product -->
 

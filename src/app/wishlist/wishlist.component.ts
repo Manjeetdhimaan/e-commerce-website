@@ -9,9 +9,12 @@ import { WishlistService } from './wishlist.service';
 })
 export class WishlistComponent implements OnInit , DoCheck {
   constructor(private shoppingCartService: ShoppingCartService, private wishlistService:WishlistService) { }
-  wishList:any[] = [
-  ]
+  wishList:any[] = [];
+
+  cartList: any[];
+
   ngOnInit(): void {
+    this.wishlistService.getWishListProductFromFirebase();
     this.cartList = this.shoppingCartService.getCartItem();
     this.wishList = this.wishlistService.getWishListItem();
   }
@@ -20,7 +23,7 @@ export class WishlistComponent implements OnInit , DoCheck {
   }
 
   wishlistDropdown=false;
-   cartList: any[]
+   
  
 
   dropdownToggler() {
@@ -38,9 +41,9 @@ export class WishlistComponent implements OnInit , DoCheck {
     return (status == this.stockStatusMapping[status]) ? true : false
   }
 
-  onDeleteItem(index: number) {
+  onDeleteItem(id:any, index: number) {
     this.cartList.splice(index,1)
-   this.wishlistService.deleteWishListItem(index)
+   this.wishlistService.deleteWishListItem(id,index)
   }
 
 
@@ -54,6 +57,6 @@ export class WishlistComponent implements OnInit , DoCheck {
   }
 
   onAddItemToCart(item:any){
-    this.shoppingCartService.onaddItemToCart(item)
+    this.shoppingCartService.onaddItemToCart(item.id)
   }
 }

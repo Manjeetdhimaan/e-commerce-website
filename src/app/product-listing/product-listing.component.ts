@@ -14,9 +14,7 @@ export class ProductListingComponent implements OnInit , OnDestroy{
   productList: Observable<any[]>
  
   ngOnInit(){
-    // this.productList = this.productListService.getProductList();
     this.productList =  this.productListService.getProductsFirebase();
-
   }
 
   setClass: string = 'product product-7 text-center'

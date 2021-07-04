@@ -1,4 +1,5 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { ShoppingCartService } from './shopping-cart/shopping-cart.service';
 
 
 @Component({
@@ -6,11 +7,15 @@ import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent{
+export class AppComponent implements OnInit{
   title = 'new-shop';
   
-  constructor() {}
+  constructor(private shoppingCartService:ShoppingCartService) {
 
+  }
+ngOnInit(){
+ 
+}
   toggleMobileMenu = false;
   mobileMenuToggle() {
     this.toggleMobileMenu = !this.toggleMobileMenu

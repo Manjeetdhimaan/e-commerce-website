@@ -12,7 +12,7 @@ import { ProductListingService } from 'src/app/product-listing/product-listing.s
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-  constructor(private shoppingCartServive: ShoppingCartService,
+  constructor(private shoppingCartService: ShoppingCartService,
     private wishlistService: WishlistService,
     private productDetailService: ProductDetailService,
     private route: ActivatedRoute,
@@ -22,13 +22,15 @@ export class ProductComponent implements OnInit {
   @Input() category: string = '';
   @Input() subCategory: string = '';
   @Input() setClass: string = ''; 
-  @Input() hidden:string ='hidden'
+  @Input() visibilityOfRatings:string ='hidden'
   @Input() imagesrc = "";
   @Input() layout='grid';
+  @Input() changeImgSrc=true;
+  @Input() showColor=false;
 
   cart = {}
   ngOnInit() {
-    this.shoppingCartServive.cart.subscribe(value =>{
+    this.shoppingCartService.cart.subscribe(value =>{
       console.log('my cart ' , value);
       this.cart = value;
     })
@@ -81,13 +83,12 @@ export class ProductComponent implements OnInit {
   }
 
   onAddtoCart( product:any) {
-  //  event.stopPropogation();
-   this.shoppingCartServive.onaddItemToCart(product.id)
-    // this.shoppingCartServive.onaddItemToCart(item)
-
+   this.shoppingCartService.onaddItemToCart(product.id)
   }   
+
+
   onAddItemToWishList(item: any) {
-    this.wishlistService.onAddItemToWishList(item)
+    this.wishlistService.onAddItemToWishList(item.id)
 
   }
 

@@ -26,11 +26,10 @@
                     <div class="products mb-3">
                         <div class="row justify-content-center">
                             <div class="col-6" *ngFor="let data of productList| async | paginate: { itemsPerPage: itemsPerPage, currentPage: p };let i = index">
-                                <div class="product product-4">
-                                    <app-product [data]="data" [setClass]="setClass" [hidden]="visible"
+                                <div class="product product-7">
+                                    <app-product [data]="data" [setClass]="setClass" [visibilityOfRatings]="visible"
                                         [imagesrc]="data.imageSrc[0]"></app-product>
                                 </div>
-                                <!-- {{ itemsPerPage * (p -1) + i+1 }} -->
                             </div>
                         </div>
                     </div>
