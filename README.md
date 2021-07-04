@@ -1,6 +1,15 @@
-# e-commerce-website
+# e-commerce-website (New Shop) 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
+Started on - 1 june 2021 
+Ends on - Still in progress on date 3 july 2021
+It a Ecommerce website which is named as New Shop 
+created this E-commerce website using angular framework ,took a static template website and converted it into an angular website ,
+created reusable components in which I created an accordion which is fully reusable ,
+reusable product component with two structures(list and grid layout) , 
+did pagination in product listing using npm package , created carousel component using npm package , 
+users can add & delete in cart and wish- list , 
+used firebase for some backend development from where all the data of Cart and products-list is being fetched.
 
 ## Development server
 
